@@ -11,5 +11,5 @@ app.use(express.static(path.join(__dirname, '../client/dist')));
 
 //run server on port number
 app.listen(8080, () => {
-    console.log('listening on port 3000!');
+    console.log('listening on port 8080!');
 });
