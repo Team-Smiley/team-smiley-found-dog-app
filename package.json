@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/RayMan504/team-smiley-found-dog-app#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "pg": "^7.11.0"
   }
 }
