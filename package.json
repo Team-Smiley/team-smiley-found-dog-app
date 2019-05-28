@@ -18,6 +18,13 @@
   "homepage": "https://github.com/RayMan504/team-smiley-found-dog-app#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "pg": "^7.11.0"
+    "pg": "^7.11.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.6",
+    "babel-preset-react": "^6.24.1"
   }
 }
