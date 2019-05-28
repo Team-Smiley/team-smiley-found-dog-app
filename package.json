@@ -1,0 +1,19 @@
+{
+  "name": "team-smiley-found-dog-app",
+  "version": "1.0.0",
+  "description": "found dog app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RayMan504/team-smiley-found-dog-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RayMan504/team-smiley-found-dog-app/issues"
+  },
+  "homepage": "https://github.com/RayMan504/team-smiley-found-dog-app#readme"
+}
