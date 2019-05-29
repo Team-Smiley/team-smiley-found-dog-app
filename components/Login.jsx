@@ -23,9 +23,8 @@ class Login extends React.Component {
         event.preventDefault();
 
     }
-
+    // render basic login form
     render() {
-        const { value, password } = this.state;
         return (
             <div>
                 <form onSubmit={this.handleSubmit} >
