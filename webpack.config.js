@@ -4,6 +4,7 @@ const SRC = path.join(__dirname, '/client/src');
 const DIST = path.join(__dirname, '/client/dist');
 
 module.exports = {
+    watch: true,
     mode: 'production',
     //define entry point for webpack to start transforming
     entry: `${SRC}/index.jsx`,
