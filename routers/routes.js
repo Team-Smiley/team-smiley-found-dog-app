@@ -34,8 +34,12 @@ router.route('/signup')
 
 router.route('/user')
     .get((req, res, next) => {
-        //if user is logged in
-            //send response
+        //use sequelize query on user model to check if user exists in database
+            //handle errors in sequelize query
+            //if user exists
+                //grab session
+                //send user already exists response
+            //else
         //redirect to login
         res.send('main page')
     }).post((req, res, next) => {
