@@ -20,6 +20,7 @@
   "homepage": "https://github.com/RayMan504/team-smiley-found-dog-app#readme",
   "dependencies": {
     "axios": "^0.18.0",
+    "bcrypt": "^3.0.6",
     "express": "^4.17.1",
     "mocha": "^6.1.4",
     "passport": "^0.4.0",
