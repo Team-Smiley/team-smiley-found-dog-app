@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 
 const sequelize = new Sequelize('Paws', '', '', {
-  host: 'localhost',
+  host: '142.93.192.110',
   dialect: 'postgres'
 });
 
