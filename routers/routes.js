@@ -1,6 +1,7 @@
 // require express
 const express = require('express');
-
+// require passport
+const passport = require('passport');
 //define router instance
 const router = express.Router();
 
