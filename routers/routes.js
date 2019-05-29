@@ -20,6 +20,14 @@ router.route('/signup')
         //send response on login get request
         res.send('signup stuff');
     }).post((req, res, next) => {
+        //get username and password stored in request body
+        //use sequelize query on user model to check if user exists in database
+            //handle errors in sequelize query
+            //if user exists
+                //send user already exists response
+            //else
+                //make a new user. call helper function to hash password
+                //store new user in database
         //send response on login get request
         res.send('add user to database');
     });
