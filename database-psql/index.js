@@ -1,14 +1,29 @@
-const { Client } = require('pg')
-const client = new Client()
-
-//require bcrypt
+const Sequelize = require('sequelize');
 const bcrypt = require('bcrypt');
 
+const sequelize = new Sequelize('Paws', 'root', '', {
+  host: '142.93.192.110',
+  dialect: 'postgres'
+});
+
+//require bcrypt
+
 // setup helper function on user model for hashing passwords with bcrypt 
-User.hash = (password) => {
+// User.hash = (password) => {
     // implement genSalt method on bcrypt object. takes number of times to salt and callback
         // implement hash method of bcrypt object. takes password, salt from genSalt callback, and a callback
             //store hash in database 
-}
+// }
 
-await client.connect()
+
+//to check and see if sequilize is running
+sequelize
+.authenticate()
+.then(() => {
+  console.log('Connection has been established successfully.');
+})
+.catch(err => {
+  console.error('Unable to connect to the database:', err);
+});
+
+// await client.connect()
