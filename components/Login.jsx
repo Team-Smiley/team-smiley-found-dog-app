@@ -13,6 +13,7 @@ class Login extends React.Component {
     }
 
     handleChange(event) {
+        event.preventDefault();
         const { name, value } = event.target;
         const state = {};
         state[name] = value;
