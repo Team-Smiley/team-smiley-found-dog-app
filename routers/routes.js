@@ -23,6 +23,16 @@ router.route('/signup')
         res.send('add user to database');
     });
 
+router.route('/user')
+    .get((req, res, next) => {
+        //if user is logged in
+            //send response
+        //redirect to login
+        res.send('main page')
+    }).post((req, res, next) => {
+        //add user comments to database
+        res.send('comment added');
+    })
 
 
 
