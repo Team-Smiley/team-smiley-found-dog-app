@@ -6,7 +6,7 @@ const sequelize = new Sequelize('Paws', 'root', 'orangetrainfalcon', {
   dialect: 'postgres',
 });
 
-
+//test
 // to check and see if sequilize is running
 sequelize
   .authenticate()
