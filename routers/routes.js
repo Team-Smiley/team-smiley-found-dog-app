@@ -4,12 +4,15 @@ const express = require('express');
 const passport = require('passport');
 //define router instance
 const router = express.Router();
+const app = express();
+app.set('view engine', 'ejs');
+
 
 //test get request to login page
 router.route('/login')
     .get( (req, res, next) => {
         //send response on login get request
-        res.send('login stuff');
+        res.render('../views/login');
     }).post((req, res, next) => {
         //send response on login get request
         res.send('get session from database');

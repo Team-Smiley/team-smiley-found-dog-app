@@ -8,6 +8,7 @@ require('../database-psql/index.js');
 // call express and assign to variable
 const app = express();
 
+app.set('view engine', 'ejs');
 //middleware
 //serve static files
 app.use(express.static(path.join(__dirname, '../client/dist')));
