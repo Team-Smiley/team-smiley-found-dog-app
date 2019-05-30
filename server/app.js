@@ -5,6 +5,7 @@ const path = require('path');
 //access routes in router file
 const router  = require('../routers/routes.js');
 require('../database-psql/index.js');
+require('dotenv').config();
 // call express and assign to variable
 const app = express();
 
