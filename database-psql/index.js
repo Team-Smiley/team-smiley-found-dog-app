@@ -1,11 +1,13 @@
 const Sequelize = require('sequelize');
 
-const sequelize = new Sequelize('Paws', '', '', {
-  host: 'localhost',
-  dialect: 'postgres'
+
+const sequelize = new Sequelize('Paws', 'root', 'orangetrainfalcon', {
+  host: 'paws.cykfkgwxg7am.us-east-2.rds.amazonaws.com',
+  dialect: 'postgres',
 });
 
-//to check and see if sequilize is running
+
+// to check and see if sequilize is running
 sequelize
   .authenticate()
   .then(() => {
