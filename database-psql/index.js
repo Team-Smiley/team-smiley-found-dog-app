@@ -64,25 +64,33 @@ const User = sequelize.define('user', {
    },
  });
 
-//  Session.belongsTo(User);
+ const Comments = sequelize.define('comments', {
+   message: {
+     type: Sequelize.STRING
+   },
+ })
+ // comment
+
+ //  Session.belongsTo(User);
 //  Pets.belongsTo(User);
-
+ 
  User.sync({ force: true }).then(() => {
-  // Now the `users` table in the database corresponds to the model definition
-  return User.create({
-    firstName: 'Chris',
-    lastName: 'Huston',
-    username: 'chust',
-    email: 'sample@email.com',
-    password: 'SamplePass'
+   // Now the `users` table in the database corresponds to the model definition
+   return User.create({
+     firstName: 'Chris',
+     lastName: 'Huston',
+     username: 'chust',
+     email: 'sample@email.com',
+     password: 'SamplePass'
+    });
   });
- });
+  
 
- Pets.sync({ force:true }).then(() => {
-   return Pets.create({
-     name: 'Panic',
-     message: 'Cat'
-   });
- });
-
+  Pets.sync({ force:true }).then(() => {
+    return Pets.create({
+      name: 'Panic',
+      message: 'Cat'
+    });
+  });
+  
 // await client.connect()
