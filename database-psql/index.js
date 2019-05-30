@@ -1,9 +1,9 @@
 const Sequelize = require('sequelize');
 const bcrypt = require('bcrypt');
 
-const sequelize = new Sequelize('Paws', 'root', '', {
-  host: '142.93.192.110',
-  dialect: 'postgres'
+const sequelize = new Sequelize('Paws', 'root', 'orangetrainfalcon', {
+  host: 'paws.cykfkgwxg7am.us-east-2.rds.amazonaws.com',
+  dialect: 'postgres',
 });
 
 //require bcrypt
