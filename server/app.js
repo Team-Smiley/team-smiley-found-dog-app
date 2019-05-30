@@ -7,6 +7,8 @@ const router  = require('../routers/routes.js');
 require('../database-psql/index.js');
 // call express and assign to variable
 const app = express();
+//dotenv
+require('dotenv').config();
 
 app.set('view engine', 'ejs');
 //middleware
