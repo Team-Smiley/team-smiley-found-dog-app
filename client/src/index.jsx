@@ -2,7 +2,8 @@
 import React from 'react'
 //require react dom
 import ReactDOM from 'react-dom'
-import Login from '../../components/Login.jsx'
+import axios from 'axios';
+import Dashboard from '../../components/Dashboard.jsx';
 import withFirebaseAuth from 'react-with-firebase-auth'
 import * as firebase from 'firebase/app';
 import 'firebase/auth';
@@ -29,6 +30,11 @@ class App extends React.Component {
       this.setState({
           user: result.user
       })
+      axios.post('/login', {
+        result
+      }).then((res) => {
+        console.log('this works');
+      })
     })
   }
   logout() {
@@ -38,6 +44,7 @@ class App extends React.Component {
       this.setState({
         user: null
       })
+
     })
   }
   componentDidMount() {
@@ -56,7 +63,7 @@ class App extends React.Component {
    //render html
    render() {
      let authButton = this.state.user ? 
-      <button onClick={this.logout}>Log Out</button> : 
+      <Dashboard logout={this.logout}/> : 
       <button onClick={this.login}>Log In</button>
      return (
        <div>
