@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/RayMan504/team-smiley-found-dog-app#readme",
   "dependencies": {
+    "@material-ui/core": "^4.0.1",
+    "@material-ui/icons": "^4.0.1",
     "axios": "^0.18.0",
     "bcrypt": "^3.0.6",
     "body-parser": "^1.19.0",
@@ -26,7 +28,11 @@
     "ejs": "^2.6.1",
     "express": "^4.17.1",
     "firebase": "^6.1.0",
+<<<<<<< HEAD
     "fs": "0.0.1-security",
+=======
+    "materialize-css": "^1.0.0-rc.2",
+>>>>>>> 028642a3178e38a7cbd0b70dca5516ea768565f8
     "mocha": "^6.1.4",
     "passport": "^0.4.0",
     "path": "^0.12.7",
@@ -35,7 +41,8 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-with-firebase-auth": "^1.0.3",
-    "sequelize": "^5.8.7"
+    "sequelize": "^5.8.7",
+    "typeface-roboto": "0.0.54"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
