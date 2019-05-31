@@ -15,7 +15,7 @@ const theme = createMuiTheme();
 
 // creat main app componet to be used with react
 function App(props){
-    return firebaseInitialized!==false?(
+    return true ?(
     // use multi theme component to apply generated theme througout our app
        <MuiThemeProvider theme={theme}>
           {/* use baseline component to give css functionality to individual components/pages in the app */}
@@ -29,7 +29,7 @@ function App(props){
                    <Route exact path='/register' component={Register} />
                    {/* may change the login to / root so it default */}
                    <Route exact path='/login' component={Login} />
-                   <Route exact path='/dashboard' component={Dash} />
+                   <Route exact path='/dash' component={Dash} />
                </Switch>
            </Router>
        </MuiThemeProvider>

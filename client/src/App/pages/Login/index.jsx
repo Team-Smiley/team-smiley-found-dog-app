@@ -2,6 +2,8 @@ import React from 'react'
 import { Typography, Paper, Avatar, Button, FormControl, Input, InputLabel } from '@material-ui/core'
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
 import withStyles from '@material-ui/core/styles/withStyles'
+import 'firebase/auth';
+import { auth, provider } from '../../firebaseConfig.js';
 
 const styles = theme => ({
     main: {
@@ -32,6 +34,21 @@ const styles = theme => ({
         marginTop: theme.spacing.unit * 3,
     },
 });
+
+const gmailLogin = () => {
+    //use firebase signinwithpopupmethod. takes google auth provider
+    auth.signInWithPopup(provider).then((result) => {
+        //reset state to current logged in user
+        this.setState({
+            user: result.user
+        })
+        axios.post('/gmailLogin', {
+            result
+        }).then((res) => {
+            console.log('this works');
+        })
+    })
+}
 
 function Login(props) {
     const { classes } = props
@@ -69,6 +86,9 @@ function Login(props) {
                         color="secondary"
                         className={classes.submit}>
                         Register
+                    </Button>
+                    <Button 
+                        onClick={gmailLogin}>G-Mail
                     </Button>
                 </form>
             </Paper>
