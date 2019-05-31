@@ -1,5 +1,6 @@
 // creating a login page
 import React from 'react'
+import CommentList from './CommentList.jsx';
 
 class Dashboard extends React.Component {
     constructor(props) {
