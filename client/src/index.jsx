@@ -8,6 +8,7 @@ import withFirebaseAuth from 'react-with-firebase-auth'
 import * as firebase from 'firebase/app';
 import 'firebase/auth';
 import {auth, provider} from './firebaseConfig.js';
+import Pets from '../../components/Pets.jsx';
 
 //create class app component
 class App extends React.Component {
@@ -67,7 +68,12 @@ class App extends React.Component {
       <button onClick={this.login}>Log In</button>
      return (
        <div>
-         {authButton}
+        <div>
+          {authButton}
+        </div>
+        <div>
+          <Pets />
+        </div>
        </div>
      ) 
    }

@@ -71,6 +71,9 @@ const User = sequelize.define('user', {
    name: {
      type: Sequelize.STRING
    },
+   type: {
+     type: Sequelize.STRING
+   },
    message: {
      type: Sequelize.STRING
    },
@@ -96,10 +99,7 @@ const User = sequelize.define('user', {
   
 
   // Pets.sync({ force:true }).then(() => {
-  //   return Pets.create({
-  //     name: 'Panic',
-  //     message: 'Cat'
-  //   });
+    
   // });
   
   
