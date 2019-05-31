@@ -83,9 +83,6 @@ const User = sequelize.define('user', {
    message: {
      type: Sequelize.STRING
    },
-   image: {
-     type: Sequelize.STRING
-   }
  });
 
  const Comments = sequelize.define('comments', {
@@ -93,10 +90,10 @@ const User = sequelize.define('user', {
      type: Sequelize.STRING
    },
  })
- comment
+ 
 
-  Pets.hasOne(User, { foreignKey: 'petsId' });
- User.belongsTo(Pets, {foreignKey: 'userId'});
+//  Pets.hasOne(User, { foreignKey: 'petsId' });
+//  Pets.belongsTo(User, {foreignKey: 'userId'});
  
  User.sync({ force: true }).then(() => {
    // Now the `users` table in the database corresponds to the model definition
