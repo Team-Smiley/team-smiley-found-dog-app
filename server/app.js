@@ -30,7 +30,7 @@ app.get('/*', function(req, res) {
   })
 
 //use routes in router file
-//app.use('/', router);
+app.use('/', router);
 
 //run server on port number
 app.listen(8080, () => {

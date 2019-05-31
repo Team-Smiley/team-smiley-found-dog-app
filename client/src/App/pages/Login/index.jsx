@@ -4,6 +4,7 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
 import withStyles from '@material-ui/core/styles/withStyles'
 import 'firebase/auth';
 import { auth, provider } from '../../firebaseConfig.js';
+import axios from 'axios';
 
 const styles = theme => ({
     main: {
@@ -39,9 +40,9 @@ const gmailLogin = () => {
     //use firebase signinwithpopupmethod. takes google auth provider
     auth.signInWithPopup(provider).then((result) => {
         //reset state to current logged in user
-        this.setState({
-            user: result.user
-        })
+        // this.setState({
+        //     user: result.user
+        // })
         axios.post('/gmailLogin', {
             result
         }).then((res) => {

@@ -4,6 +4,7 @@ import VerifiedUserOutlined from '@material-ui/icons/VerifiedUserOutlined'
 import withStyles from '@material-ui/core/styles/withStyles'
 // import firebase from '../../firebaseConfig.js'
 import { withRouter } from 'react-router-dom'
+import Pets from '../../components/Pets.jsx'
 
 const styles = theme => ({
     main: {
@@ -65,7 +66,7 @@ function Dashboard(props) {
                     Your Dog: Pic <br />
                     Sited: 20
                 </Typography>
-                <CommentList />
+                <Pets />
                 {/* <Button type="submit" fullWidth variant="contained" color="secondary" onClick={logout} className={classes.submit}>
                     Logout
         </Button> */}
