@@ -5,8 +5,7 @@ class Dashboard extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            username: '',
-            password: '',
+            comments: [],
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -30,6 +29,7 @@ class Dashboard extends React.Component {
         return (
             <div >
                 Welcome to Found Dog!
+                <CommentList />
                 <button onClick={this.props.logout}>Log Out</button>
             </div>
         )
