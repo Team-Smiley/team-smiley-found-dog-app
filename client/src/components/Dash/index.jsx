@@ -36,4 +36,5 @@ class Dashboard extends React.Component {
     }
 }
 
+// export to be routed in main App
 export default Dashboard
