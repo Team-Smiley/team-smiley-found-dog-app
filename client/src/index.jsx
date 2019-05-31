@@ -21,21 +21,27 @@ class App extends React.Component {
     this.logout = this.logout.bind(this);
    }
    
-login() {
+   //login function
+  login() {
+    //use firebase signinwithpopupmethod. takes google auth provider
     auth.signInWithPopup(provider).then((result) => {
+      //reset state to current logged in user
       this.setState({
           user: result.user
       })
     })
   }
   logout() {
+    //use firebase signout method.
     auth.signOut().then((result) => {
+      //remove user from state
       this.setState({
         user: null
       })
     })
   }
   componentDidMount() {
+    //call authListener
     this.authListener();
   }
   authListener() {
