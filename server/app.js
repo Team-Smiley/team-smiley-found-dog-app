@@ -1,3 +1,4 @@
+require('dotenv').config();
 // require express
 const express = require('express');
 //require path to serve static files
@@ -5,9 +6,8 @@ const path = require('path');
 //access routes in router file
 const router  = require('../routers/routes.js');
 const bodyParser = require('body-parser');
-require('dotenv').config();
 
-require('../database-psql/index.js');
+// require('../database-psql/index.js');
 
 // call express and assign to variable
 const app = express();

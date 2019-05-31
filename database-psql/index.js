@@ -49,32 +49,23 @@ sequelize
 
 const User = sequelize.define('user', {
   // attributesss
-  firstName: {
+  name: {
     type: Sequelize.STRING,
-    allowNull: false
-  },
-  lastName: {
-    type: Sequelize.STRING
+    unique: true,
     // allowNull defaults to true
-  },
-  username: {
-    type: Sequelize.STRING
   },
   email: {
     type: Sequelize.STRING
   },
-  password: {
-    type: Sequelize.STRING
-  }
  }, {
   // options
  });
 
- const Session = sequelize.define('session', {
-   hash: {
-     type: Sequelize.STRING
-   }
- });
+//  const Session = sequelize.define('session', {
+//    hash: {
+//      type: Sequelize.STRING
+//    }
+//  });
 
  const Pets = sequelize.define('pets', {
    name: {
@@ -85,7 +76,7 @@ const User = sequelize.define('user', {
    },
    image: {
      type: Sequelize.STRING
-   }
+   },
  });
 
  const Comments = sequelize.define('comments', {
@@ -93,28 +84,25 @@ const User = sequelize.define('user', {
      type: Sequelize.STRING
    },
  })
- // comment
-
- //  Session.belongsTo(User);
-//  Pets.belongsTo(User);
  
- User.sync({ force: true }).then(() => {
-   // Now the `users` table in the database corresponds to the model definition
-   return User.create({
-     firstName: 'Chris',
-     lastName: 'Huston',
-     username: 'chust',
-     email: 'sample@email.com',
-     password: 'SamplePass'
-    });
-  });
+
+//  Pets.hasOne(User, { foreignKey: 'petsId' });
+//  Pets.belongsTo(User, {foreignKey: 'userId'});
+ 
+//  User.sync({ force: true }).then(() => {
+//    // Now the `users` table in the database corresponds to the model definition
+   
+//   });
   
 
-  Pets.sync({ force:true }).then(() => {
-    return Pets.create({
-      name: 'Panic',
-      message: 'Cat'
-    });
-  });
+  // Pets.sync({ force:true }).then(() => {
+  //   return Pets.create({
+  //     name: 'Panic',
+  //     message: 'Cat'
+  //   });
+  // });
   
+  
+
+  module.exports.User = User;
 // await client.connect()
