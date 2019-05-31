@@ -1,9 +1,9 @@
 import React from 'react';
 // imports in the different component pages to to routed out to our index.html
-import HomePage from '../Home';
-import Dashboard from '../Dash';
-import Register from '../SignUp';
-import Login from '../Login';
+import HomePage from './pages/Home';
+import Dashboard from './pages/Dash';
+import Register from './pages/SignUp';
+import Login from './pages/Login';
 // imports components for using our material ui design components
 import { MuiThemeProvider , createMuiTheme } from '@material-ui/core/styles';
 import  { CssBaseline , CircularProgress } from '@material-ui/core';

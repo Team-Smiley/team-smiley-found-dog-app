@@ -1,5 +1,5 @@
 import React from 'react';
-import Comments from '../Comments'
+import Comments from '../../components/comments'
 
 // create component function Home, for HomePage, so it can be used with react hooks
 function Home(props){
