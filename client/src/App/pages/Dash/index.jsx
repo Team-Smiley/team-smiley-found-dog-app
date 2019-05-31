@@ -65,6 +65,7 @@ function Dashboard(props) {
                     Your Dog: Pic <br />
                     Sited: 20
                 </Typography>
+                <CommentList />
                 {/* <Button type="submit" fullWidth variant="contained" color="secondary" onClick={logout} className={classes.submit}>
                     Logout
         </Button> */}
@@ -72,6 +73,7 @@ function Dashboard(props) {
         </main>
 
     )
+
 
     // async function logout() {
     //     await firebase.logout()
