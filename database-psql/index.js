@@ -90,10 +90,10 @@ const User = sequelize.define('user', {
      type: Sequelize.STRING
    },
  })
- // comment
+ comment
 
- //  Session.belongsTo(User);
-//  Pets.belongsTo(User);
+  Pets.hasOne(User, { foreignKey: 'petsId' });
+ User.belongsTo(Pets, {foreignKey: 'userId'});
  
  User.sync({ force: true }).then(() => {
    // Now the `users` table in the database corresponds to the model definition
