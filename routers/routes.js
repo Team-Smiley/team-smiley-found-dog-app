@@ -12,11 +12,8 @@ app.set('view engine', 'ejs');
 
 
 //test get request to login page
-router.route('/login')
-    .get( (req, res, next) => {
-        //send response on login get request
-        res.render('../views/login');
-    }).post((req, res, next) => {
+router.route('/gmailLogin')
+        .post((req, res, next) => {
         // console.log(req.body.result.user);
         const { displayName, email} = req.body.result.user;
         console.log(displayName, email);
