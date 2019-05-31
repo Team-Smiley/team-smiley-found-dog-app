@@ -28,7 +28,11 @@
     "ejs": "^2.6.1",
     "express": "^4.17.1",
     "firebase": "^6.1.0",
+<<<<<<< HEAD
+    "fs": "0.0.1-security",
+=======
     "materialize-css": "^1.0.0-rc.2",
+>>>>>>> 028642a3178e38a7cbd0b70dca5516ea768565f8
     "mocha": "^6.1.4",
     "passport": "^0.4.0",
     "path": "^0.12.7",
