@@ -5,9 +5,13 @@ const path = require('path');
 //access routes in router file
 const router  = require('../routers/routes.js');
 require('../database-psql/index.js');
+require('dotenv').config();
 // call express and assign to variable
 const app = express();
+//dotenv
+require('dotenv').config();
 
+app.set('view engine', 'ejs');
 //middleware
 //serve static files
 app.use(express.static(path.join(__dirname, '../client/dist')));

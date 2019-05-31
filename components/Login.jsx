@@ -26,20 +26,27 @@ class Login extends React.Component {
     }
     // render basic login form
     render() {
+        const {
+            user,
+            signOut,
+            signInWithGoogle,
+            handleSignUp
+          } = this.props;
         return (
-            <div>
-                <form onSubmit={this.handleSubmit} >
-                    <label> Enter Username:
-                        <input type="text" name="username" onChange={this.handleChange} />
-                    </label>
-                    <br/>
-                    <label> Enter Password:
-                        <input type="text" name="password" onChange={this.handleChange} />
-                    </label>
-                    <br/>
-                    <input type="button" value="Submit" onSubmit={this.handleSubmit} />
-                </form>
-            </div>
+            <div className="App">
+                <header className="App-header">
+                {
+                    user 
+                    ? <p>Hello, {user.displayName}</p>
+                    : <p>Please sign in.</p>
+                }
+                {
+                    user
+                    ? <button onClick={signOut}>Sign out</button>
+                    : <button onClick={handleSignUp}>Sign in with Google</button>
+                }
+                </header>
+          </div>
         )
     }
 }
