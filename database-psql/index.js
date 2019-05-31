@@ -1,9 +1,9 @@
 const Sequelize = require('sequelize');
 const bcrypt = require('bcrypt');
-
 const sequelize = new Sequelize(`${process.env.MY_DB}`, `${process.env.MY_UN}`, `${process.env.MY_PW}`, {
   host: `${process.env.MY_HOST}`,
   dialect: 'postgres',
+  port: process.env.PORT // add port
 });
 
 //require bcrypt
