@@ -15,6 +15,7 @@ router.route('/login')
         res.render('../views/login');
     }).post((req, res, next) => {
         //send response on login get request
+        // console.log(req.body.user,'yooo');
         res.send('get session from database');
     });
 

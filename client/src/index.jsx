@@ -2,6 +2,7 @@
 import React from 'react'
 //require react dom
 import ReactDOM from 'react-dom'
+import axios from 'axios';
 import Login from '../../components/Login.jsx'
 import withFirebaseAuth from 'react-with-firebase-auth'
 import * as firebase from 'firebase/app';
@@ -29,6 +30,11 @@ class App extends React.Component {
       this.setState({
           user: result.user
       })
+      axios.post('/login', {
+        result
+      }).then((res) => {
+        console.log('this works');
+      })
     })
   }
   logout() {
@@ -38,6 +44,7 @@ class App extends React.Component {
       this.setState({
         user: null
       })
+
     })
   }
   componentDidMount() {

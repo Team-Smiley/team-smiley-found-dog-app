@@ -4,6 +4,8 @@ const express = require('express');
 const path = require('path');
 //access routes in router file
 const router  = require('../routers/routes.js');
+const bodyParser = require('body-parser');
+
 require('../database-psql/index.js');
 require('dotenv').config();
 // call express and assign to variable
@@ -14,6 +16,7 @@ require('dotenv').config();
 app.set('view engine', 'ejs');
 //middleware
 //serve static files
+app.use(bodyParser.json())
 app.use(express.static(path.join(__dirname, '../client/dist')));
 
 //use routes in router file
