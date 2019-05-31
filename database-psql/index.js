@@ -49,7 +49,7 @@ sequelize
 });
 
 const User = sequelize.define('user', {
-  // attributes
+  // attributesss
   firstName: {
     type: Sequelize.STRING,
     allowNull: false

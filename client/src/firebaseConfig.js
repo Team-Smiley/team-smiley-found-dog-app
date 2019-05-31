@@ -1,3 +1,4 @@
+const firebase = require('firebase/app');
 const config = {
     apiKey: process.env.APIKEY,
     authDomain: process.env.DOMAIN,
@@ -7,5 +8,13 @@ const config = {
     messagingSenderId: process.env.MESSAGINGSENDERID,
     appId: process.env.APPID
 };
+firebase.initializeApp(config);
 
-export default config;
+const provider = new firebase.auth.GoogleAuthProvider()
+const auth = firebase.auth();
+
+module.exports = {
+    firebase,
+    provider,
+    auth
+}
