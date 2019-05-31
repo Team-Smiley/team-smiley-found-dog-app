@@ -6,7 +6,6 @@ const path = require('path');
 const router  = require('../routers/routes.js');
 const bodyParser = require('body-parser');
 require('dotenv').config();
-//
 
 require('../database-psql/index.js');
 

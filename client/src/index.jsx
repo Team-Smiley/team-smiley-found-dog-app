@@ -3,7 +3,7 @@ import React from 'react'
 //require react dom
 import ReactDOM from 'react-dom'
 import axios from 'axios';
-import Dashboard from '../../components/Dashboard.jsx';
+import Dashboard from '../../components/Dashboard.jsx'
 import withFirebaseAuth from 'react-with-firebase-auth'
 import * as firebase from 'firebase/app';
 import 'firebase/auth';
