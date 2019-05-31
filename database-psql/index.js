@@ -83,6 +83,9 @@ const User = sequelize.define('user', {
    message: {
      type: Sequelize.STRING
    },
+   image: {
+     type: Sequelize.STRING
+   }
  });
 
  const Comments = sequelize.define('comments', {
