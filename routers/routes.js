@@ -2,6 +2,9 @@
 const express = require('express');
 // require passport
 const passport = require('passport');
+// const Sequelize = require('sequelize');
+// require('../database-psql/index.js');
+const { User } = require('../database-psql/index.js');
 //define router instance
 const router = express.Router();
 const app = express();
@@ -17,6 +20,10 @@ router.route('/login')
         // console.log(req.body.result.user);
         const { displayName, email} = req.body.result.user;
         console.log(displayName, email);
+        User.findOrCreate({where: {
+            name: displayName,
+            email: email,
+        }})
         //send response on login get request
         // console.log(req.body.user,'yooo');
         res.send('get session from database');
