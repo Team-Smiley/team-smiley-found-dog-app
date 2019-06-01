@@ -4,7 +4,7 @@ const express = require('express');
 const passport = require('passport');
 // const Sequelize = require('sequelize');
 // require('../database-psql/index.js');
-const { User } = require('../database-psql/index.js');
+const { User, Pets } = require('../database-psql/index.js');
 //define router instance
 const router = express.Router();
 const app = express();
@@ -55,7 +55,9 @@ router.route('/user')
         res.send('main page')
     }).post((req, res, next) => {
         //add user comments to database
+        console.log(req.body);
         res.send('comment added');
+        
     })
 
 
