@@ -46,19 +46,7 @@ function Home(props){
                 <Typography component="h1" variant="h5">
                     Welcome Back to Found Dog!
                 </Typography>
-                {/* add button for registering */}
-                <Button
-                    type="submit"
-                    fullWidth
-                    variant="outlined"
-                    color="primary"
-                    // add route to signup
-                    component={Link}
-                    to="/signup"
-                    className={classes.submit}>
-                    SignUp
-                </Button>
-                {/* add button for login */}
+                {/* add button for signing in */}
                 <Button
                     type="submit"
                     fullWidth
@@ -68,13 +56,37 @@ function Home(props){
                     component={Link}
                     to="/login"
                     className={classes.submit}>
-                    Login
+                    Sign-In
+                </Button>
+                {/* add button for lost dogs map */}
+                <Button
+                    type="submit"
+                    fullWidth
+                    variant="contained"
+                    color="secondary"
+                    // add link to dash
+                    component={Link}
+                    to="/lostdogs"
+                    className={classes.submit}>
+                    LOST DOGS!
+                </Button>
+                {/* add button for signing up */}
+                <Button
+                    type="submit"
+                    fullWidth
+                    variant="outlined"
+                    color="primary"
+                    // add route to signup
+                    component={Link}
+                    to="/signup"
+                    className={classes.submit}>
+                    Sign-Up
                 </Button>
                 {/* add button for dashboard */}
                 <Button
                     type="submit"
                     fullWidth
-                    variant="contained"
+                    variant="outlined"
                     color="secondary"
                     // add link to dash
                     component={Link}
