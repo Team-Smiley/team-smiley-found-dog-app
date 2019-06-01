@@ -3,14 +3,22 @@ import React from 'react';
 import { GoogleMap, LoadScript } from '@react-google-maps/api'
 
 
-// create as function for react to hook
-function LostMap(props){
-    return(
-        <div>
-        MAP HERE
-        </div>
-    )
-}
+function LostMap() {
+       return (
+        <LoadScript
+          id="script-loader"
+          googleMapsApiKey="MAP_API_KEY"
+        //other proprties here 
+        >
+          <GoogleMap
+            id='losr-dog-map'
+        // other properties here >
+        >
+            {/* Map components */}
+          </GoogleMap>
+        </LoadScript>
+       )
+    }
 
 //export it for app to route
 export default LostMap 
