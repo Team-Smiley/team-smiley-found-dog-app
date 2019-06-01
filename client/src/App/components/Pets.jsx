@@ -10,16 +10,18 @@ class Pets extends React.Component {
             name: '',
             type: '',
             message: '',
+            image: '',
             widget: window.cloudinary.createUploadWidget({
         cloud_name: `duubp6wjp`,
         // imageUrl: 'https://api.cloudinary.com/v1_1/dyucbqgew/image/upload'
         uploadPreset: `wwcugh6n` },
-        (err, result) => {return console.log(result); }
+        (err, result) => {this.checkUploadResult(result)}
       )
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.showWidget = this.showWidget.bind(this);
+        this.checkUploadResult = this.checkUploadResult.bind(this);
     }
 
     handleChange() {
@@ -30,19 +32,29 @@ class Pets extends React.Component {
     }
 
     handleSubmit(event) {
-      const { name, type, message } = this.state;
+      const { name, type, message, image } = this.state;
       event.preventDefault();
         // post request to db with info
         Axios.post('/user', {
           name: name,
           type: type,
           message: message,
+          image: image,
         }).then(response => console.log(response))
         .catch(err => console.error(err));
       }
     
     showWidget(e) {
       this.state.widget.open()
+    }
+
+    checkUploadResult(resultEvent) {
+      if (resultEvent.event === 'success') {
+        console.log(resultEvent);
+        this.setState({
+          image: resultEvent.info.secure_url
+        })
+      }
     }
 
        
