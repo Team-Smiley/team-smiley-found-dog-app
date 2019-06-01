@@ -4,6 +4,8 @@ import Home from './pages/Home/index.jsx';
 import Dash from './pages/Dash/index.jsx';
 import SignUp from './pages/SignUp/index.jsx';
 import SignIn from './pages/SignIn/index.jsx';
+// import new lost dog map index
+import LostMap from './pages/LostMap/index.jsx' 
 // imports components for using our material ui design components
 import { MuiThemeProvider , createMuiTheme } from '@material-ui/core/styles';
 import  { CssBaseline , CircularProgress } from '@material-ui/core';
@@ -30,6 +32,8 @@ function App(props){
                    {/* may change the login to / root so it default */}
                    <Route exact path='/signin' component={SignIn} />
                    <Route exact path='/dash' component={Dash} />
+                   {/* add route for new map page */}
+                   <Route exact path='/lostdogs' component={LostMap} />
                </Switch>
            </Router>
        </MuiThemeProvider>
