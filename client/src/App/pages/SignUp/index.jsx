@@ -71,7 +71,7 @@ function SignUp(props) {
                         variant="contained"
                         color="primary"
                         className={classes.submit}>
-                        SignUp!
+                        Sign Up!
                     </Button>
 
                     <Button
@@ -81,9 +81,9 @@ function SignUp(props) {
                         color="secondary"
                         // route login back to login
                         component={Link}
-                        to="/login"
+                        to="/signin"
                         className={classes.submit}>
-                        Back to Login
+                        Back to Sign-In
                     </Button>
                 </form>
             </Paper>

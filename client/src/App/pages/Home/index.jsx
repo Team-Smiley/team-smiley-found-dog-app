@@ -1,6 +1,6 @@
 import React from 'react';
 import { Typography, Paper, Avatar, Button} from '@material-ui/core'
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
+import VerifiedUserOutlined from '@material-ui/icons/VerifiedUserOutlined'
 import withStyles from '@material-ui/core/styles/withStyles'
 import { Link } from 'react-router-dom'
 
@@ -44,7 +44,7 @@ function Home(props){
                     <VerifiedUserOutlined />
                 </Avatar>
                 <Typography component="h1" variant="h5">
-                    Found Dog User
+                    Welcome Back to Found Dog!
                 </Typography>
                 {/* add button for registering */}
                 <Button
@@ -90,4 +90,4 @@ function Home(props){
 
 // export to be routed in main App 
 // add style exporting by calling withStyles
-export default withStyles(styles)(HomePage)
+export default withStyles(styles)(Home)

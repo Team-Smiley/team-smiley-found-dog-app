@@ -4,7 +4,7 @@ import VerifiedUserOutlined from '@material-ui/icons/VerifiedUserOutlined'
 import withStyles from '@material-ui/core/styles/withStyles'
 // import firebase from '../../firebaseConfig.js'
 import { withRouter } from 'react-router-dom'
-import Pets from '../../components/Pets.jsx'
+import Pets from '../../components/pets.jsx'
 
 const styles = theme => ({
     main: {
@@ -34,7 +34,7 @@ const styles = theme => ({
     },
 })
 
-function Dashboard(props) {
+function Dash(props) {
     const { classes } = props
 
     // if (!firebase.getCurrentUsername()) {
@@ -85,4 +85,4 @@ function Dashboard(props) {
     // }
 }
 
-export default withRouter(withStyles(styles)(Dashboard))
+export default withRouter(withStyles(styles)(Dash))

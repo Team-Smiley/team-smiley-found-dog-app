@@ -2,8 +2,8 @@ import React from 'react';
 // imports in the different component pages to to routed out to our index.html
 import Home from './pages/Home/index.jsx';
 import Dash from './pages/Dash/index.jsx';
-import Register from './pages/SignUp/index.jsx';
-import Login from './pages/Login/index.jsx';
+import SignUp from './pages/SignUp/index.jsx';
+import SignIn from './pages/SignIn/index.jsx';
 // imports components for using our material ui design components
 import { MuiThemeProvider , createMuiTheme } from '@material-ui/core/styles';
 import  { CssBaseline , CircularProgress } from '@material-ui/core';
@@ -26,9 +26,9 @@ function App(props){
                <Switch>
                    {/* define paths, adn where to route those paths when entered */}
                    <Route exact path='/' component={Home} />
-                   <Route exact path='/register' component={Register} />
+                   <Route exact path='/signup' component={SignUp} />
                    {/* may change the login to / root so it default */}
-                   <Route exact path='/login' component={Login} />
+                   <Route exact path='/signin' component={SignIn} />
                    <Route exact path='/dash' component={Dash} />
                </Switch>
            </Router>
