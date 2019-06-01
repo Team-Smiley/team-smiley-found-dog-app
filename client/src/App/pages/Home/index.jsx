@@ -34,12 +34,48 @@ const styles = theme => ({
 
 // create component function Home, for HomePage, so it can be used with react hooks
 function Home(props){
-    return(
-        <div>
-        <Comments />
-        HomePage Component
-        </div>
+    const { classes } = props
+
+    return (
+        <main className={classes.main}>
+            <Paper className={classes.paper}>
+                <Avatar className={classes.avatar}>
+                    <VerifiedUserOutlined />
+                </Avatar>
+                <Typography component="h1" variant="h5">
+                    Found Dog User
+                </Typography>
+                {/* add button for registering */}
+                <Button
+                    type="submit"
+                    fullWidth
+                    variant="outlined"
+                    color="primary"
+                    className={classes.submit}>
+                    Register
+                </Button>
+                {/* add button for login */}
+                <Button
+                    type="submit"
+                    fullWidth
+                    variant="contained"
+                    color="primary"
+                    className={classes.submit}>
+                    Login
+                </Button>
+                {/* add button for dashboard */}
+                <Button
+                    type="submit"
+                    fullWidth
+                    variant="contained"
+                    color="secondary"
+                    className={classes.submit}>
+                    Dashboard
+                </Button>
+            </Paper>
+        </main>
     )
+
 }
 
 // export to be routed in main App 
