@@ -1,4 +1,5 @@
 import React from 'react';
+import Axios from 'axios';
 
 class Pets extends React.Component {
     constructor(props) {
@@ -9,6 +10,7 @@ class Pets extends React.Component {
             message: '',
         }
         this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleChange() {
@@ -19,8 +21,19 @@ class Pets extends React.Component {
     }
 
     handleSubmit(e) {
+      const { name, type, message } = this.state;
+      e.preventDefault();
         // post request to db with info
-    }
+        Axios.post('/user', {
+          name: name,
+          type: type,
+          message: message,
+        }).then(response => console.log(response))
+        .catch(err => console.error(err));
+      }
+        
+
+       
 
     render() {
         return (
@@ -38,7 +51,7 @@ class Pets extends React.Component {
                 </label>
                 <br/>
                 {/* button for cloudinary for image of pet */}
-                <button>Submit</button>
+                <button onClick={this.handleSubmit} >Submit</button>
             </div>
         )
     }
