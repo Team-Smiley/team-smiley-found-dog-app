@@ -8,7 +8,7 @@ function LostMap() {
         <div>
           <LoadScript
             id="script-loader"
-            googleMapsApiKey="MAP_API_KEY"
+            googleMapsApiKey="AIzaSyA2c-zDbhrd763cPEygoTp2Qj9kylSHwJs"
           //other proprties here 
           >
             <GoogleMap

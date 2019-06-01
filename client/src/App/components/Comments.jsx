@@ -1,33 +1,33 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-// trigger post request on button click to store comments in database
-const addComment = (comment) => {
-    //axios post request to store comment in database
-    axios.post('/comments', {
-        comment
-    }).then((res) => {
-        //check route to see if server post request was triggered
-    })
-    //reset state by adding comment to array
-}
+import { Typography, Paper, Avatar, Button} from '@material-ui/core'
+import VerifiedUserOutlined from '@material-ui/icons/VerifiedUserOutlined'
+import withStyles from '@material-ui/core/styles/withStyles'
+
+
+
 //make handle change to bind comment input 
 function Comments(props) {
+    const [state, setState] = useState({comments: [], message: ''})
+    const { message, comments } = state;
+    const addComment = (comment) => {
+        console.log(setState, 'whats this?')
+        // axios.post
+    }
+    //rerender once on every state change
+    useEffect(() => {
+        //axios get request to get messages from database
+        console.log('I will run only once');
+    }, []);
     return (
         <div>
+            <div></div>
             <label>Comment:
                 <input type="text" name="message" />
             </label>
-            <Button
-                type="submit"
-                fullWidth
-                variant="contained"
-                color="secondary"
-                // route login back to login
-                component={Link}
-                to="/signin"
-                className={classes.submit}>
-                Back to Sign-In
-            </Button>
+            <button onClick={addComment}>
+                Add Comment
+            </button>
         </div>
     )
 }
