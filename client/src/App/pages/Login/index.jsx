@@ -89,6 +89,7 @@ function Login(props) {
                         Register
                     </Button>
                     <Button 
+                        type="submit"
                         onClick={gmailLogin}>G-Mail
                     </Button>
                 </form>
@@ -96,5 +97,5 @@ function Login(props) {
         </main>
     )
 }
-
+//
 export default withStyles(styles)(Login)
