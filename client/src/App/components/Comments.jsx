@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Typography, Paper, Avatar, Button} from '@material-ui/core'
 import VerifiedUserOutlined from '@material-ui/icons/VerifiedUserOutlined'
 import withStyles from '@material-ui/core/styles/withStyles'
+import Comment from './Comment.jsx';
 
 
 
@@ -11,17 +12,29 @@ function Comments(props) {
     const [state, setState] = useState({comments: [], message: ''})
     const { message, comments } = state;
     const addComment = (comment) => {
-        console.log(setState, 'whats this?')
+        axios.post('/comments', {
+            message: 'i fucking suck'
+        }).then((res) => {
+            axios.get('/comments').then((results) => {
+                setState({comments: results});
+            })
+        })
+        // console.log(setState, 'whats this?')
         // axios.post
     }
     //rerender once on every state change
     useEffect(() => {
         //axios get request to get messages from database
+        axios.get('/comments').then((results) => {
+            setState({comments: results.data});
+        });
         console.log('I will run only once');
     }, []);
     return (
         <div>
-            <div></div>
+            <div>
+                {comments.map(comment => <Comment comment={comment}></Comment>)}
+            </div>
             <label>Comment:
                 <input type="text" name="message" />
             </label>
