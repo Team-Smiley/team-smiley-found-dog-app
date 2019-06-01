@@ -11,10 +11,11 @@ class Pets extends React.Component {
             type: '',
             message: '',
             widget: window.cloudinary.createUploadWidget({
-              cloud_name: `${process.env.CLOUD_NAME}`,
-              uploadPreset: `${process.env.NAME_PRESET}` },
-              (err, result) => { }
-            )
+        cloud_name: `duubp6wjp`,
+        // imageUrl: 'https://api.cloudinary.com/v1_1/dyucbqgew/image/upload'
+        uploadPreset: `wwcugh6n` },
+        (err, result) => {return console.log(result); }
+      )
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -41,21 +42,17 @@ class Pets extends React.Component {
       }
     
     showWidget(e) {
-      widget.open()
+      this.state.widget.open()
     }
 
        
 
     render() {
-      // let widget = window.cloudinary.createUploadWidget({
-      //   cloud_name: `${process.env.CLOUD_NAME}`,
-      //   uploadPreset: `${process.env.NAME_PRESET}` },
-      //   (err, result) => { }
-      // )
-      // widget.open();
+      
         return (
             <div>
               <button onClick={this.showWidget}>Upload Pet</button>
+                <br />
                 <label>Pet Name:
                     <input type="text" name="name" onChange={this.handleChange} />
                 </label>
