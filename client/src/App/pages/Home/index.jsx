@@ -25,7 +25,7 @@ const styles = theme => ({
         padding: `${theme.spacing(2)}px ${theme.spacing(3)}px ${theme.spacing(3)}px`,
     },
     avatar: {
-        margin: theme.spacing.unit,
+        margin: theme.spacing(),
         backgroundColor: theme.palette.primary.main,
     },
     submit: {
@@ -66,7 +66,7 @@ function Home(props){
                     color="primary"
                     // add route to login
                     component={Link}
-                    to="/login"
+                    to="/signin"
                     className={classes.submit}>
                     Sign-In
                 </Button>

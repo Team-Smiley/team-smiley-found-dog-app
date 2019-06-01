@@ -26,7 +26,7 @@ const styles = theme => ({
         padding: `${theme.spacing(2)}px ${theme.spacing(3)}px ${theme.spacing(3)}px`,
     },
     avatar: {
-        margin: theme.spacing.unit,
+        margin: theme.spacing(),
         backgroundColor: theme.palette.secondary.main,
     },
     submit: {
