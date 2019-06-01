@@ -1,10 +1,11 @@
 import React from 'react';
+import Geolocation from '../../components/Geolocation.jsx';
 
 // create component function Home, for HomePage, so it can be used with react hooks
 function Home(props){
     return(
         <div>
-        <Comments />
+        <Geolocation />
         HomePage Component
         </div>
     )

@@ -3,8 +3,9 @@ import { Typography, Paper, Avatar, CircularProgress, Button } from '@material-u
 import VerifiedUserOutlined from '@material-ui/icons/VerifiedUserOutlined'
 import withStyles from '@material-ui/core/styles/withStyles'
 // import firebase from '../../firebaseConfig.js'
-import { withRouter } from 'react-router-dom'
-import Pets from '../../components/Pets.jsx'
+import { withRouter } from 'react-router-dom';
+import Pets from '../../components/Pets.jsx';
+import Geolocation from '../../components/Geolocation.jsx';
 
 const styles = theme => ({
     main: {
@@ -70,6 +71,7 @@ function Dashboard(props) {
                 {/* <Button type="submit" fullWidth variant="contained" color="secondary" onClick={logout} className={classes.submit}>
                     Logout
         </Button> */}
+                <Geolocation />
             </Paper>
         </main>
 
