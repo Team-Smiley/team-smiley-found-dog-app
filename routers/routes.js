@@ -53,10 +53,10 @@ router.route('/user')
             //else
         //redirect to login
         Pets.findAll()
-            .then(pets => res.json(pets))
+            .then(pets => res.send(pets))
             .catch(err => console.error(err))
         
-        res.send('heres the pets')
+        // res.send('heres the pets')
     }).post((req, res, next) => {
         //add user comments to database
         console.log(req.body);
