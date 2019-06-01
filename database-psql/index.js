@@ -78,7 +78,7 @@ const User = sequelize.define('user', {
      type: Sequelize.STRING
    },
    image: {
-     type: Sequelize.STRING
+     type: Sequelize.STRING(500)
    },
  });
 
