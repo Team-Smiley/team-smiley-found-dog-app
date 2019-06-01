@@ -4,54 +4,42 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
 import withStyles from '@material-ui/core/styles/withStyles'
 import 'firebase/auth';
 import { auth, provider } from '../../firebaseConfig.js';
-import axios from 'axios';
+// import link and withRouter
+import { Link, withRouter } from 'react-router-dom'
+// import gmail login component
+import gmailLogin from '../../components/gmailLogin.jsx'
 
 const styles = theme => ({
     main: {
         width: 'auto',
-        marginLeft: theme.spacing.unit * 3,
-        marginRight: theme.spacing.unit * 3,
-        [theme.breakpoints.up(400 + theme.spacing.unit * 3 * 2)]: {
+        marginLeft: theme.spacing(3),
+        marginRight: theme.spacing(3),
+        [theme.breakpoints.up(400 + theme.spacing(3) * 2)]: {
             width: 400,
             marginLeft: 'auto',
             marginRight: 'auto',
         },
     },
     paper: {
-        marginTop: theme.spacing.unit * 8,
+        marginTop: theme.spacing(8),
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        padding: `${theme.spacing.unit * 2}px ${theme.spacing.unit * 3}px ${theme.spacing.unit * 3}px`,
+        padding: `${theme.spacing(2)}px ${theme.spacing(3)}px ${theme.spacing(3)}px`,
     },
     avatar: {
-        margin: theme.spacing.unit,
+        margin: theme.spacing(),
         backgroundColor: theme.palette.secondary.main,
     },
     form: {
-        marginTop: theme.spacing.unit,
+        marginTop: theme.spacing(),
     },
     submit: {
-        marginTop: theme.spacing.unit * 3,
+        marginTop: theme.spacing(3),
     },
 });
 
-const gmailLogin = () => {
-    //use firebase signinwithpopupmethod. takes google auth provider
-    auth.signInWithPopup(provider).then((result) => {
-        //reset state to current logged in user
-        // this.setState({
-        //     user: result.user
-        // })
-        axios.post('/gmailLogin', {
-            result
-        }).then((res) => {
-            console.log('this works');
-        })
-    })
-}
-
-function Login(props) {
+function SignIn(props) {
     const { classes } = props
 
     return (
@@ -61,7 +49,7 @@ function Login(props) {
                     <LockOutlinedIcon />
                 </Avatar>
                 <Typography component="h1" variant="h5">
-                    Sign in
+                    Found Dog Sign-In
                 </Typography>
                 <form className={classes.form}>
                     <FormControl margin="normal" required fullWidth>
@@ -78,19 +66,33 @@ function Login(props) {
                         variant="contained"
                         color="primary"
                         className={classes.submit}>
-                        Sign in
+                        Sign In!
                     </Button>
                     <Button
                         type="submit"
                         fullWidth
                         variant="outlined"
                         color="secondary"
+                        component={Link}
+                        to="/signup"
                         className={classes.submit}>
-                        Register
+                        Sign Up!
                     </Button>
+                    <Typography 
+                    component="h1" 
+                    variant="overline"
+                    align="center"
+                    gutterBottom={false}>
+                       OR
+                    </Typography>
                     <Button 
                         type="submit"
-                        onClick={gmailLogin}>G-Mail
+                        fullWidth
+                        variant="contained"
+                        color="secondary"
+                        onClick={gmailLogin}
+                        className={classes.submit}>
+                        G-Mail
                     </Button>
                 </form>
             </Paper>
@@ -98,4 +100,4 @@ function Login(props) {
     )
 }
 //
-export default withStyles(styles)(Login)
+export default withRouter(withStyles(styles)(SignIn))

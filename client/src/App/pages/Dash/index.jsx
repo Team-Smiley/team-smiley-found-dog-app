@@ -3,39 +3,40 @@ import { Typography, Paper, Avatar, CircularProgress, Button } from '@material-u
 import VerifiedUserOutlined from '@material-ui/icons/VerifiedUserOutlined'
 import withStyles from '@material-ui/core/styles/withStyles'
 // import firebase from '../../firebaseConfig.js'
-import { withRouter } from 'react-router-dom';
-import Pets from '../../components/Pets.jsx';
-import Geolocation from '../../components/Geolocation.jsx';
+import { withRouter } from 'react-router-dom'
+import Pets from '../../components/pets.jsx'
+import Geolocation from '../../components/Geolocation.jsx'
+
 
 const styles = theme => ({
     main: {
         width: 'auto',
         display: 'block', // Fix IE 11 issue.
-        marginLeft: theme.spacing.unit * 3,
-        marginRight: theme.spacing.unit * 3,
-        [theme.breakpoints.up(400 + theme.spacing.unit * 3 * 2)]: {
+        marginLeft: theme.spacing(3),
+        marginRight: theme.spacing(3),
+        [theme.breakpoints.up(400 + theme.spacing(3) * 2)]: {
             width: 400,
             marginLeft: 'auto',
             marginRight: 'auto',
         },
     },
     paper: {
-        marginTop: theme.spacing.unit * 8,
+        marginTop: theme.spacing(8),
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        padding: `${theme.spacing.unit * 2}px ${theme.spacing.unit * 3}px ${theme.spacing.unit * 3}px`,
+        padding: `${theme.spacing(2)}px ${theme.spacing(3)}px ${theme.spacing(3)}px`,
     },
     avatar: {
-        margin: theme.spacing.unit,
+        margin: theme.spacing(),
         backgroundColor: theme.palette.secondary.main,
     },
     submit: {
-        marginTop: theme.spacing.unit * 3,
+        marginTop: theme.spacing(3),
     },
 })
 
-function Dashboard(props) {
+function Dash(props) {
     const { classes } = props
 
     // if (!firebase.getCurrentUsername()) {
@@ -64,7 +65,7 @@ function Dashboard(props) {
                 </Typography>
                 <Typography component="h1" variant="h5">
                     {/* Your Dog {fruit ? `"${fruit}"` : <CircularProgress size={20} />} */}
-                    Your Dog: Pic <br />
+                    Your Pet: Pic <br />
                     Sited: 20
                 </Typography>
                 <Pets />
@@ -87,4 +88,4 @@ function Dashboard(props) {
     // }
 }
 
-export default withRouter(withStyles(styles)(Dashboard))
+export default withRouter(withStyles(styles)(Dash))
