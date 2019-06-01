@@ -2,6 +2,9 @@
 const express = require('express');
 // require passport
 const passport = require('passport');
+// const Sequelize = require('sequelize');
+// require('../database-psql/index.js');
+const { User, Pets } = require('../database-psql/index.js');
 //define router instance
 const router = express.Router();
 const app = express();
@@ -9,11 +12,15 @@ app.set('view engine', 'ejs');
 
 
 //test get request to login page
-router.route('/login')
-    .get( (req, res, next) => {
-        //send response on login get request
-        res.render('../views/login');
-    }).post((req, res, next) => {
+router.route('/gmailLogin')
+        .post((req, res, next) => {
+        // console.log(req.body.result.user);
+        const { displayName, email} = req.body.result.user;
+        console.log(displayName, email);
+        User.findOrCreate({where: {
+            name: displayName,
+            email: email,
+        }})
         //send response on login get request
         // console.log(req.body.user,'yooo');
         res.send('get session from database');
@@ -48,7 +55,15 @@ router.route('/user')
         res.send('main page')
     }).post((req, res, next) => {
         //add user comments to database
+        console.log(req.body);
+        const { name, type, message } = req.body;
+        Pets.findOrCreate({where: {
+          name: name,
+          type: type,
+          message: message,
+        }})
         res.send('comment added');
+        
     })
 
 
