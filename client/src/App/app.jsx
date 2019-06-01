@@ -19,24 +19,24 @@ const theme = createMuiTheme();
 function App(props){
     return true ?(
     // use multi theme component to apply generated theme througout our app
-       <MuiThemeProvider theme={theme}>
+    <MuiThemeProvider theme={theme}>
           {/* use baseline component to give css functionality to individual components/pages in the app */}
-           <CssBaseline/>
+        <CssBaseline/>
            {/* use main router component first to use subsequent functions */}
-           <Router>
+        <Router>
                {/* use switch function to handle different routing paths */}
-               <Switch>
+            <Switch>
                    {/* define paths, adn where to route those paths when entered */}
-                   <Route exact path='/' component={Home} />
-                   <Route exact path='/signup' component={SignUp} />
+                <Route exact path='/' component={Home} />
+                <Route exact path='/signup' component={SignUp} />
                    {/* may change the login to / root so it default */}
-                   <Route exact path='/signin' component={SignIn} />
-                   <Route exact path='/dash' component={Dash} />
+                <Route exact path='/signin' component={SignIn} />
+                <Route exact path='/dash' component={Dash} />
                    {/* add route for new map page */}
-                   <Route exact path='/lostdogs' component={LostMap} />
-               </Switch>
-           </Router>
-       </MuiThemeProvider>
+                <Route exact path='/lostpets' component={LostMap} />
+            </Switch>
+        </Router>
+    </MuiThemeProvider>
     ):<div id="loader"><CircularProgress/></div>
 }
 

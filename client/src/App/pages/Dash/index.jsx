@@ -63,8 +63,10 @@ function Dash(props) {
                 </Typography>
                 <Typography component="h1" variant="h5">
                     {/* Your Dog {fruit ? `"${fruit}"` : <CircularProgress size={20} />} */}
-                    Your Dog: Pic <br />
-                    Sited: 20
+                    {/* add default pic if no uploads */}
+                    Your Pet: Pic <br />
+                    {/* should be able to get count from map */}
+                    Sightings: 20
                 </Typography>
                 <Pets />
                 {/* <Button type="submit" fullWidth variant="contained" color="secondary" onClick={logout} className={classes.submit}>

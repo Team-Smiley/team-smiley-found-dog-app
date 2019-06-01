@@ -54,9 +54,9 @@ function Home(props){
                     color="secondary"
                     // add link to dash
                     component={Link}
-                    to="/lostdogs"
+                    to="/lostpets"
                     className={classes.submit}>
-                    LOST DOGS!
+                    LOST PETS!
                 </Button>
                 {/* add button for signing in */}
                 <Button
