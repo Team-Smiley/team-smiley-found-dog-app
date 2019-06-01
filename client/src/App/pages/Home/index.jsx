@@ -2,6 +2,7 @@ import React from 'react';
 import { Typography, Paper, Avatar, Button} from '@material-ui/core'
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
 import withStyles from '@material-ui/core/styles/withStyles'
+import { Link } from 'react-router-dom'
 
 // add basic styling wanted
 const styles = theme => ({
@@ -51,8 +52,11 @@ function Home(props){
                     fullWidth
                     variant="outlined"
                     color="primary"
+                    // add route to signup
+                    component={Link}
+                    to="/signup"
                     className={classes.submit}>
-                    Register
+                    SignUp
                 </Button>
                 {/* add button for login */}
                 <Button
@@ -60,6 +64,9 @@ function Home(props){
                     fullWidth
                     variant="contained"
                     color="primary"
+                    // add route to login
+                    component={Link}
+                    to="/login"
                     className={classes.submit}>
                     Login
                 </Button>
@@ -69,6 +76,9 @@ function Home(props){
                     fullWidth
                     variant="contained"
                     color="secondary"
+                    // add link to dash
+                    component={Link}
+                    to="/dash"
                     className={classes.submit}>
                     Dashboard
                 </Button>
