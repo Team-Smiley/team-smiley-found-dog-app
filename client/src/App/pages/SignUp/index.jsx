@@ -2,6 +2,7 @@ import React from 'react'
 import { Typography, Paper, Avatar, Button, FormControl, Input, InputLabel } from '@material-ui/core'
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
 import withStyles from '@material-ui/core/styles/withStyles'
+// import link and withRouter function to redirect within 
 import { Link, withRouter } from 'react-router-dom'
 
 const styles = theme => ({
@@ -44,7 +45,7 @@ function SignUp(props) {
                     <LockOutlinedIcon />
                 </Avatar>
                 <Typography component="h1" variant="h5">
-                    Register Account
+                    Join the Found Dog Community!
                 </Typography>
                 <form className={classes.form}>
                     <FormControl margin="normal" required fullWidth>
@@ -60,7 +61,7 @@ function SignUp(props) {
                         <Input name="password" type="password" id="password" autoComplete="off"  />
                     </FormControl>
                     <FormControl margin="normal" required fullWidth>
-                        <InputLabel htmlFor="fruit">Your Favorite Fruit</InputLabel>
+                        <InputLabel htmlFor="fruit">Your Favorite Breed of Dog?</InputLabel>
                         <Input name="fruit" type="text" id="fruit" autoComplete="off" />
                     </FormControl>
 
@@ -70,7 +71,7 @@ function SignUp(props) {
                         variant="contained"
                         color="primary"
                         className={classes.submit}>
-                        Register
+                        SignUp!
                     </Button>
 
                     <Button
@@ -78,8 +79,11 @@ function SignUp(props) {
                         fullWidth
                         variant="contained"
                         color="secondary"
+                        // route login back to login
+                        component={Link}
+                        to="/login"
                         className={classes.submit}>
-                        Go back to Login
+                        Back to Login
                     </Button>
                 </form>
             </Paper>
@@ -87,4 +91,6 @@ function SignUp(props) {
     )
 }
 
-export default withStyles(styles)(SignUp)
+// export singup page with its styling
+// add withRouter function on
+export default withRouter(withStyles(styles)(SignUp))
