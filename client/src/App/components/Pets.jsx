@@ -22,6 +22,7 @@ class Pets extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.showWidget = this.showWidget.bind(this);
         this.checkUploadResult = this.checkUploadResult.bind(this);
+        this.getPets = this.getPets.bind(this);
     }
 
     handleChange() {
@@ -57,6 +58,11 @@ class Pets extends React.Component {
       }
     }
 
+    getPets() {
+      Axios.get('/user')
+        .then(res => console.log(res));
+    }
+
        
 
     render() {
@@ -79,6 +85,7 @@ class Pets extends React.Component {
                 <br/>
                 {/* button for cloudinary for image of pet */}
                 <button onClick={this.handleSubmit} >Submit</button>
+                <button onClick={this.getPets} >Click for Lost Pets</button>
             </div>
         )
     }
