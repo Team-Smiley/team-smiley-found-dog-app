@@ -9,27 +9,27 @@ const styles = theme => ({
     main: {
         width: 'auto',
         display: 'block', 
-        marginLeft: theme.spacing.unit * 3,
-        marginRight: theme.spacing.unit * 3,
-        [theme.breakpoints.up(400 + theme.spacing.unit * 3 * 2)]: {
+        marginLeft: theme.spacing(3),
+        marginRight: theme.spacing(3),
+        [theme.breakpoints.up(400 + theme.spacing(3) * 2)]: {
             width: 400,
             marginLeft: 'auto',
             marginRight: 'auto',
         },
     },
     paper: {
-        marginTop: theme.spacing.unit * 8,
+        marginTop: theme.spacing(8),
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        padding: `${theme.spacing.unit * 2}px ${theme.spacing.unit * 3}px ${theme.spacing.unit * 3}px`,
+        padding: `${theme.spacing(2)}px ${theme.spacing(3)}px ${theme.spacing(3)}px`,
     },
     avatar: {
         margin: theme.spacing.unit,
         backgroundColor: theme.palette.primary.main,
     },
     submit: {
-        marginTop: theme.spacing.unit * 3,
+        marginTop: theme.spacing(3),
     },
 })
 
@@ -46,18 +46,6 @@ function Home(props){
                 <Typography component="h1" variant="h5">
                     Welcome Back to Found Dog!
                 </Typography>
-                {/* add button for signing in */}
-                <Button
-                    type="submit"
-                    fullWidth
-                    variant="contained"
-                    color="primary"
-                    // add route to login
-                    component={Link}
-                    to="/login"
-                    className={classes.submit}>
-                    Sign-In
-                </Button>
                 {/* add button for lost dogs map */}
                 <Button
                     type="submit"
@@ -69,6 +57,18 @@ function Home(props){
                     to="/lostdogs"
                     className={classes.submit}>
                     LOST DOGS!
+                </Button>
+                {/* add button for signing in */}
+                <Button
+                    type="submit"
+                    fullWidth
+                    variant="contained"
+                    color="primary"
+                    // add route to login
+                    component={Link}
+                    to="/login"
+                    className={classes.submit}>
+                    Sign-In
                 </Button>
                 {/* add button for signing up */}
                 <Button
