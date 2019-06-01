@@ -2,35 +2,36 @@ import React from 'react'
 import { Typography, Paper, Avatar, Button, FormControl, Input, InputLabel } from '@material-ui/core'
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
 import withStyles from '@material-ui/core/styles/withStyles'
+// import link and withRouter function to redirect within 
 import { Link, withRouter } from 'react-router-dom'
 
 const styles = theme => ({
     main: {
         width: 'auto',
-        marginLeft: theme.spacing.unit * 3,
-        marginRight: theme.spacing.unit * 3,
-        [theme.breakpoints.up(400 + theme.spacing.unit * 3 * 2)]: {
+        marginLeft: theme.spacing(3),
+        marginRight: theme.spacing(3),
+        [theme.breakpoints.up(400 + theme.spacing(3) * 2)]: {
             width: 400,
             marginLeft: 'auto',
             marginRight: 'auto',
         },
     },
     paper: {
-        marginTop: theme.spacing.unit * 8,
+        marginTop: theme.spacing(8),
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        padding: `${theme.spacing.unit * 2}px ${theme.spacing.unit * 3}px ${theme.spacing.unit * 3}px`,
+        padding: `${theme.spacing(2)}px ${theme.spacing(3)}px ${theme.spacing(3)}px`,
     },
     avatar: {
-        margin: theme.spacing.unit,
+        margin: theme.spacing(),
         backgroundColor: theme.palette.secondary.main,
     },
     form: {
-        marginTop: theme.spacing.unit,
+        marginTop: theme.spacing(),
     },
     submit: {
-        marginTop: theme.spacing.unit * 3,
+        marginTop: theme.spacing(3),
     },
 })
 
@@ -44,7 +45,7 @@ function SignUp(props) {
                     <LockOutlinedIcon />
                 </Avatar>
                 <Typography component="h1" variant="h5">
-                    Register Account
+                    Join the Found Dog Community!
                 </Typography>
                 <form className={classes.form}>
                     <FormControl margin="normal" required fullWidth>
@@ -60,7 +61,7 @@ function SignUp(props) {
                         <Input name="password" type="password" id="password" autoComplete="off"  />
                     </FormControl>
                     <FormControl margin="normal" required fullWidth>
-                        <InputLabel htmlFor="fruit">Your Favorite Fruit</InputLabel>
+                        <InputLabel htmlFor="fruit">Your Favorite Breed of Dog?</InputLabel>
                         <Input name="fruit" type="text" id="fruit" autoComplete="off" />
                     </FormControl>
 
@@ -70,7 +71,7 @@ function SignUp(props) {
                         variant="contained"
                         color="primary"
                         className={classes.submit}>
-                        Register
+                        Sign Up!
                     </Button>
 
                     <Button
@@ -78,8 +79,11 @@ function SignUp(props) {
                         fullWidth
                         variant="contained"
                         color="secondary"
+                        // route login back to login
+                        component={Link}
+                        to="/signin"
                         className={classes.submit}>
-                        Go back to Login
+                        Back to Sign-In
                     </Button>
                 </form>
             </Paper>
@@ -87,4 +91,6 @@ function SignUp(props) {
     )
 }
 
-export default withStyles(styles)(SignUp)
+// export singup page with its styling
+// add withRouter function on
+export default withRouter(withStyles(styles)(SignUp))
