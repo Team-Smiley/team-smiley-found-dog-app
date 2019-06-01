@@ -21,7 +21,6 @@ class Dashboard extends React.Component {
 
     handleSubmit(event) {
         event.preventDefault();
-
     }
     // render basic login form
     render() {
