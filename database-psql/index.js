@@ -105,9 +105,9 @@ const User = sequelize.define('user', {
 //   });
   
 
-  Pets.sync({ force:true }).then(() => {
+  // Pets.sync({ force:true }).then(() => {
     
-  });
+  // });
   
   
 

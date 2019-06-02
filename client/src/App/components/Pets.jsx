@@ -12,7 +12,10 @@ class Pets extends React.Component {
             type: '',
             message: '',
             image: '',
+<<<<<<< HEAD
             contact: '',
+=======
+>>>>>>> 5f72d5196622273ec0f66782296ae503df776809
             pets: [],
             widget: window.cloudinary.createUploadWidget({
         cloud_name: `duubp6wjp`,
@@ -101,7 +104,10 @@ class Pets extends React.Component {
                 <br/>
                 {/* button for cloudinary for image of pet */}
                 <button onClick={this.handleSubmit} >Submit</button>
+<<<<<<< HEAD
                 <br/>
+=======
+>>>>>>> 5f72d5196622273ec0f66782296ae503df776809
                 <button onClick={this.getPets} >Click for Lost Pets</button>
                 <PetsList pets={pets} />
             </div>
