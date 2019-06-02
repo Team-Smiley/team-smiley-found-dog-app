@@ -5,6 +5,8 @@ import withStyles from '@material-ui/core/styles/withStyles'
 // import firebase from '../../firebaseConfig.js'
 import { withRouter } from 'react-router-dom'
 import Pets from '../../components/pets.jsx'
+import Geolocation from '../../components/Geolocation.jsx'
+
 
 const styles = theme => ({
     main: {
@@ -43,6 +45,7 @@ function Dash(props) {
     //     props.history.replace('/login')
     //     return null
     // }
+    //
 
     const [fruit, setFruit] = useState('')
 
@@ -63,16 +66,16 @@ function Dash(props) {
                 </Typography>
                 <Typography component="h1" variant="h5">
                     {/* Your Dog {fruit ? `"${fruit}"` : <CircularProgress size={20} />} */}
-                    {/* add default pic if no uploads */}
                     Your Pet: Pic <br />
-                    {/* should be able to get count from map */}
-                    Sightings: 20
+                    Sited: 20
                 </Typography>
                 <Pets />
                 {/* <Button type="submit" fullWidth variant="contained" color="secondary" onClick={logout} className={classes.submit}>
                     Logout
         </Button> */}
+                <Geolocation />
             </Paper>
+            
         </main>
 
     )

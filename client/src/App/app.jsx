@@ -1,3 +1,5 @@
+//geolocation
+import { useCurrentPosition } from 'react-use-geolocation';
 import React from 'react';
 // imports in the different component pages to to routed out to our index.html
 import Home from './pages/Home/index.jsx';
@@ -17,6 +19,15 @@ const theme = createMuiTheme();
 
 // creat main app componet to be used with react
 function App(props){
+    const [position, error] = useCurrentPosition();
+  
+    if (!position && !error) {
+      return <p>Waiting...</p>;
+    }
+  
+    if (error) {
+      return <p>{error.message}</p>;
+    }
     return true ?(
     // use multi theme component to apply generated theme througout our app
     <MuiThemeProvider theme={theme}>

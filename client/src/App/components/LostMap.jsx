@@ -44,7 +44,7 @@ class LostMap extends React.Component {
     return (
       <Map
         item
-        xs={12}
+        xs={15}
         style={style}
         google={this.props.google}
         onClick={this.onMapClick}
