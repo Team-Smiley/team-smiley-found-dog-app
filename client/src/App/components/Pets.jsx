@@ -2,6 +2,7 @@ import React from 'react';
 import Axios from 'axios';
 // require('dotenv').config;
 // import cloudinary from 'cloudinary';
+import PetsList from './PetsList.jsx';
 
 class Pets extends React.Component {
     constructor(props) {
@@ -11,6 +12,7 @@ class Pets extends React.Component {
             type: '',
             message: '',
             image: '',
+            pets: [],
             widget: window.cloudinary.createUploadWidget({
         cloud_name: `duubp6wjp`,
         // imageUrl: 'https://api.cloudinary.com/v1_1/dyucbqgew/image/upload'
@@ -22,6 +24,7 @@ class Pets extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.showWidget = this.showWidget.bind(this);
         this.checkUploadResult = this.checkUploadResult.bind(this);
+        this.getPets = this.getPets.bind(this);
     }
 
     handleChange() {
@@ -57,10 +60,23 @@ class Pets extends React.Component {
       }
     }
 
+    getPets() {
+      Axios.get('/user')
+        .then(pets => {
+          console.log(pets);
+          let allPets = [];
+          pets.data.forEach(pet => allPets.push(pet));
+          this.setState({
+            pets: allPets,
+          })
+        })
+        .catch(err => console.error(err));
+    }
+
        
 
     render() {
-      
+      const { pets } = this.state;
         return (
             <div>
               <button onClick={this.showWidget}>Upload Pet</button>
@@ -79,6 +95,8 @@ class Pets extends React.Component {
                 <br/>
                 {/* button for cloudinary for image of pet */}
                 <button onClick={this.handleSubmit} >Submit</button>
+                <button onClick={this.getPets} >Click for Lost Pets</button>
+                <PetsList pets={pets} />
             </div>
         )
     }

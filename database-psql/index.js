@@ -87,6 +87,10 @@ const User = sequelize.define('user', {
      type: Sequelize.STRING
    },
  })
+
+//  Comments.sync({ force: true }).then(() => {
+
+// })
  
 
 //  Pets.hasOne(User, { foreignKey: 'petsId' });
@@ -106,4 +110,5 @@ const User = sequelize.define('user', {
 
   module.exports.User = User;
   module.exports.Pets = Pets;
+  module.exports.Comments = Comments;
 // await client.connect()

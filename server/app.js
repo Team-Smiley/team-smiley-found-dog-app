@@ -19,18 +19,20 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.json())
 app.use(express.static(path.join(__dirname, '../client/dist')));
 
+// get request to /user
+app.get('/user', router);
 
+app.use('/', router);
 // trying to implement use of single page app, re-rirect requests to index.html which handles routing
-app.get('/*', function(req, res) {
-    res.sendFile(path.join(__dirname, '../client/dist/index.html'), function(err) {
-      if (err) {
-        res.status(500).send(err)
-      }
-    })
+app.get('*', function(req, res) {
+  res.sendFile(path.join(__dirname, '../client/dist/index.html'), function(err) {
+    if (err) {
+      res.status(500).send(err)
+    }
   })
+})
 
 //use routes in router file
-app.use('/', router);
 
 //run server on port number
 app.listen(8080, () => {

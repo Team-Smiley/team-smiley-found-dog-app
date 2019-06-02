@@ -3,8 +3,11 @@ import { Typography, Paper, Avatar, CircularProgress, Button } from '@material-u
 import VerifiedUserOutlined from '@material-ui/icons/VerifiedUserOutlined'
 import withStyles from '@material-ui/core/styles/withStyles'
 // import firebase from '../../firebaseConfig.js'
-import { withRouter } from 'react-router-dom'
+import { withRouter, Link } from 'react-router-dom'
 import Pets from '../../components/pets.jsx'
+import Geolocation from '../../components/Geolocation.jsx'
+
+
 
 const styles = theme => ({
     main: {
@@ -43,6 +46,7 @@ function Dash(props) {
     //     props.history.replace('/login')
     //     return null
     // }
+    //
 
     const [fruit, setFruit] = useState('')
 
@@ -57,20 +61,33 @@ function Dash(props) {
                 <Avatar className={classes.avatar}>
                     <VerifiedUserOutlined />
                 </Avatar>
+                <Button
+                    type="submit"
+                    fullWidth
+                    variant="contained"
+                    color="secondary"
+                    // add link to dash
+                    component={Link}
+                    to="/lostpets"
+                    className={classes.submit}>
+                    LOST PETS!
+                </Button>
                 <Typography component="h1" variant="h5">
                     {/* Hello {firebase.getCurrentUsername()} */}
                     Hello User!
                 </Typography>
                 <Typography component="h1" variant="h5">
                     {/* Your Dog {fruit ? `"${fruit}"` : <CircularProgress size={20} />} */}
-                    Your Dog: Pic <br />
+                    Your Pet: Pic <br />
                     Sited: 20
                 </Typography>
                 <Pets />
                 {/* <Button type="submit" fullWidth variant="contained" color="secondary" onClick={logout} className={classes.submit}>
                     Logout
         </Button> */}
+                {/* <Geolocation />*/}
             </Paper>
+            
         </main>
 
     )
