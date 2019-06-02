@@ -9,19 +9,9 @@ import Comment from './Comment.jsx';
 
 //make handle change to bind comment input 
 function Comments(props) {
-    const [state, setState] = useState({comments: [], message: ''})
+    const [state, setState] = useState({comments: [], message: ''});
+
     const { message, comments } = state;
-    const addComment = (comment) => {
-        axios.post('/comments', {
-            message: 'i fucking suck'
-        }).then((res) => {
-            axios.get('/comments').then((results) => {
-                setState({comments: results});
-            })
-        })
-        // console.log(setState, 'whats this?')
-        // axios.post
-    }
     //rerender once on every state change
     useEffect(() => {
         //axios get request to get messages from database
@@ -30,15 +20,34 @@ function Comments(props) {
         });
         console.log('I will run only once');
     }, []);
+    const addComment = (comment) => {
+        console.log(comment, 'comment');
+        axios.post('/comments', {
+            message: comment
+        }).then(() => {
+            axios.get('/comments').then((results) => {
+                console.log(results, 'array')
+                setState({comments: results.data});
+            })
+        })
+        // console.log(setState, 'whats th`is?')
+        // axios.post
+    }
+    const handleMessage = (e) => {
+        console.log(e.target.value, 'hit');
+        setState({message: e.target.value});
+    }
+    
+    console.log(comments, 'comments');
     return (
         <div>
             <div>
-                {comments.map(comment => <Comment comment={comment}></Comment>)}
+                {comments ? comments.map(comment => <Comment comment={comment}></Comment>) : 'no comments yet'}
             </div>
             <label>Comment:
-                <input type="text" name="message" />
+                <input type={message} onChange={handleMessage} />
             </label>
-            <button onClick={addComment}>
+            <button onClick={() => addComment(message)}>
                 Add Comment
             </button>
         </div>
