@@ -111,5 +111,4 @@ const User = sequelize.define('user', {
   module.exports.User = User;
   module.exports.Pets = Pets;
   module.exports.Comments = Comments;
-
 // await client.connect()

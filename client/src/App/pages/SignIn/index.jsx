@@ -65,6 +65,8 @@ function SignIn(props) {
                         fullWidth
                         variant="contained"
                         color="primary"
+                        component={Link}
+                        to="/dash"
                         className={classes.submit}>
                         Sign In!
                     </Button>
@@ -90,6 +92,8 @@ function SignIn(props) {
                         fullWidth
                         variant="contained"
                         color="secondary"
+                        component={Link}
+                        to="/dash"
                         onClick={gmailLogin}
                         className={classes.submit}>
                         G-Mail
