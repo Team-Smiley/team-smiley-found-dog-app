@@ -47,7 +47,7 @@ function Home(props){
                     Welcome Back to Found Dog!
                 </Typography>
                 {/* add button for lost dogs map */}
-                <Button
+                {/* <Button
                     type="submit"
                     fullWidth
                     variant="contained"
@@ -83,7 +83,7 @@ function Home(props){
                     Sign-Up
                 </Button>
                 {/* add button for dashboard */}
-                <Button
+                {/* <Button
                     type="submit"
                     fullWidth
                     variant="outlined"
@@ -93,7 +93,7 @@ function Home(props){
                     to="/dash"
                     className={classes.submit}>
                     Dashboard
-                </Button>
+                </Button> */}
             </Paper>
         </main>
     )

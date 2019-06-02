@@ -1,7 +1,6 @@
 import React from 'react';
 import { GoogleApiWrapper, InfoWindow, Map, Marker } from 'google-maps-react'
 import { Typography, Paper } from '@material-ui/core'
-
 const GOOGLE_API = 'AIzaSyAcOJfs0mi93Vl87I0pL-CLhATVhQ8O9ek'
 
 

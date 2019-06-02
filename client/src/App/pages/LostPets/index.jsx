@@ -2,6 +2,8 @@ import React from 'react'
 import { Typography, Paper } from '@material-ui/core'
 import withStyles from '@material-ui/core/styles/withStyles'
 import LostMap from '../../components/LostMap.jsx'
+import Comments from '../../components/Comments.jsx'
+
 // import firebase from '../../firebaseConfig.js'
 
 const styles = theme => ({
@@ -36,14 +38,19 @@ function LostPets(props) {
   const { classes } = props
 
   return (
-    <main className={classes.main}>
-      <Paper className={classes.paper}>
-        <Typography component="h1" variant="h5">
-          MAPPY
-        </Typography>
-      </Paper>
-      <div><LostMap /></div>
-    </main>
+    <div>
+      <main className={classes.main}>
+        <Paper className={classes.paper}>
+          <Typography component="h1" variant="h5">
+            MAPPY
+          </Typography>
+        </Paper>
+        <div><LostMap /></div>
+      </main>
+      <div>
+          <Comments></Comments>
+      </div>
+    </div>
   )
 }
 
