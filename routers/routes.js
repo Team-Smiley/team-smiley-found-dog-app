@@ -4,7 +4,7 @@ const express = require('express');
 const passport = require('passport');
 // const Sequelize = require('sequelize');
 // require('../database-psql/index.js');
-const { User, Pets } = require('../database-psql/index.js');
+const { User, Pets, Comments } = require('../database-psql/index.js');
 //define router instance
 const router = express.Router();
 const app = express();
@@ -69,6 +69,20 @@ router.route('/user')
         }})
         res.send('comment added');
         
+    })
+
+router.route('/comments')
+    .get((req, res, next) => {
+        Comments.findAll().then((messages) => {
+            res.send(messages);
+        })
+    })
+    .post((req, res, next) => {
+        const {message} = req.body;
+        Comments.findOrCreate({where: {
+            message: message,
+        }})
+        res.send('comment added');
     })
 
 
