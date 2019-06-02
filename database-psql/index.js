@@ -80,6 +80,9 @@ const User = sequelize.define('user', {
    image: {
      type: Sequelize.STRING(500)
    },
+   contact: {
+     type: Sequelize.STRING(250)
+   }
  });
 
  const Comments = sequelize.define('comments', {
@@ -102,9 +105,9 @@ const User = sequelize.define('user', {
 //   });
   
 
-  // Pets.sync({ force:true }).then(() => {
+  Pets.sync({ force:true }).then(() => {
     
-  // });
+  });
   
   
 

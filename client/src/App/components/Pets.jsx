@@ -12,6 +12,7 @@ class Pets extends React.Component {
             type: '',
             message: '',
             image: '',
+            contact: '',
             pets: [],
             widget: window.cloudinary.createUploadWidget({
         cloud_name: `duubp6wjp`,
@@ -35,13 +36,14 @@ class Pets extends React.Component {
     }
 
     handleSubmit(event) {
-      const { name, type, message, image } = this.state;
+      const { name, type, message, image, contact } = this.state;
       event.preventDefault();
         // post request to db with info
         Axios.post('/user', {
           name: name,
           type: type,
           message: message,
+          contact: contact,
           image: image,
         }).then(response => console.log(response))
         .catch(err => console.error(err));
@@ -93,8 +95,13 @@ class Pets extends React.Component {
                     <input type="text" name="message" onChange={this.handleChange} />
                 </label>
                 <br/>
+                <label>Contact Info:
+                    <input type="text" name="contact" onChange={this.handleChange} />
+                </label>
+                <br/>
                 {/* button for cloudinary for image of pet */}
                 <button onClick={this.handleSubmit} >Submit</button>
+                <br/>
                 <button onClick={this.getPets} >Click for Lost Pets</button>
                 <PetsList pets={pets} />
             </div>

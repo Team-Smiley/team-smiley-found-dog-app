@@ -7,6 +7,7 @@ const PetsFeed = ({ pet }) => (
    <h1>{ pet.type }</h1>
    <h4>{ pet.message }</h4>
    <h5>{ pet.created_At }</h5>
+   <h5>{ pet.contact }</h5>
    <a href={pet.image} target="blank" >Lost Pet Pic</a>
  </div>
 
