@@ -57,7 +57,7 @@ function Home(props){
                     to="/lostpets"
                     className={classes.submit}>
                     LOST PETS!
-                </Button> */}
+                </Button>
                 {/* add button for signing in */}
                 <Button
                     type="submit"
