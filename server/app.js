@@ -21,7 +21,7 @@ app.use(express.static(path.join(__dirname, '../client/dist')));
 
 // get request to /user
 app.get('/user', router);
-
+app.get('/comments', router);
 // trying to implement use of single page app, re-rirect requests to index.html which handles routing
 app.get('*', function(req, res) {
   res.sendFile(path.join(__dirname, '../client/dist/index.html'), function(err) {
