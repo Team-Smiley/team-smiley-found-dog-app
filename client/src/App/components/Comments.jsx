@@ -37,7 +37,7 @@ function Comments(props) {
         console.log(e.target.value, 'hit');
         setState({message: e.target.value});
     }
-
+    
     console.log(comments, 'comments');
     return (
         <div>
@@ -53,4 +53,5 @@ function Comments(props) {
         </div>
     )
 }
-export default Comments 
+
+export default Comments

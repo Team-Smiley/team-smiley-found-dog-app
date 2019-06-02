@@ -71,19 +71,19 @@ router.route('/user')
         
     })
 
-   router.route('/comments')
-        .get((req, res, next) => {
-            Comments.findAll().then((messages) => {
-                res.send(messages);
-            })
+router.route('/comments')
+    .get((req, res, next) => {
+        Comments.findAll().then((messages) => {
+            res.send(messages);
         })
-        .post((req, res, next) => {
-            const {message} = req.body;
-            Comments.findOrCreate({where: {
-                message: message,
-            }})
-            res.send('comment added');
-        })
+    })
+    .post((req, res, next) => {
+        const {message} = req.body;
+        Comments.findOrCreate({where: {
+            message: message,
+        }})
+        res.send('comment added');
+    })
 
 
 

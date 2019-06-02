@@ -87,6 +87,10 @@ const User = sequelize.define('user', {
      type: Sequelize.STRING
    },
  })
+
+//  Comments.sync({ force: true }).then(() => {
+
+// })
  
 
 //  Pets.hasOne(User, { foreignKey: 'petsId' });
