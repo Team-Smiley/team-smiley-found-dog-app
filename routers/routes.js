@@ -60,12 +60,13 @@ router.route('/user')
     }).post((req, res, next) => {
         //add user comments to database
         console.log(req.body);
-        const { name, type, message, image } = req.body;
+        const { name, type, message, image, contact } = req.body;
         Pets.findOrCreate({where: {
           name: name,
           type: type,
           message: message,
           image: image,
+          contact: contact,
         }})
         res.send('comment added');
         
