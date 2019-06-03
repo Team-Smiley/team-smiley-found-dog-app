@@ -28,7 +28,7 @@ constructor({ pets }) {
 
 
 render() {
-    const { pets } = this.props;
+  const { pets } = this.props;
   return (
     <div>
       <h1>Lost Pets</h1>
