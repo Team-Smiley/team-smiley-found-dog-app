@@ -157,5 +157,5 @@ class LostMap extends React.Component {
 }
 
 export default GoogleApiWrapper({
-  apiKey: (GOOGLE_API)
+  // apiKey: (GOOGLE_API)
 })(LostMap)
