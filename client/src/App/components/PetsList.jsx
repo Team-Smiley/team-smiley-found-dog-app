@@ -2,6 +2,7 @@ import React from 'react';
 import Axios from 'axios';
 import PetsFeed from './petsfeed.jsx'
 
+// Grabs all the pets from state of Pets.jsx, maps through the array and passes each pet to PetsFeed
 class PetsList extends React.Component {
 constructor({ pets }) {
   super({ pets })
