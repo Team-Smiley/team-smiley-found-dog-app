@@ -104,6 +104,7 @@ class Pets extends React.Component {
                 <br/>
                 <button onClick={this.getPets} >Click for Lost Pets</button>
                 <PetsList pets={pets} />
+                {/* <Comment /> */}
             </div>
         )
     }
