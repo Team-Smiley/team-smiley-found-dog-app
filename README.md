@@ -8,7 +8,7 @@ lost pet was last seen
 3. Comment section is available for communication between users
 4. Widget available for uploading pet photos
 
-#Frameworks and Libraries
+# FRAMEWORKS AND LIBRARIES
 Database: Postgres
 Deployment: Amazon AWS
 Express.js
@@ -19,9 +19,8 @@ React.js/ React Hooks
 Materialize UI
 Sequelize
 
-#GETTING STARTED
+# GETTING STARTED
 1. npm install
 2. run the webpack script using: npm run build
 3. start the server using: npm run server-dev
 
-#Documentation
