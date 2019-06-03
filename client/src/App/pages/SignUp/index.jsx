@@ -45,7 +45,7 @@ function SignUp(props) {
                     <LockOutlinedIcon />
                 </Avatar>
                 <Typography component="h1" variant="h5">
-                    Join the PAWS & Found Community!
+                    Join the PAW Finder Community!
                 </Typography>
                 <form className={classes.form}>
                     <FormControl margin="normal" required fullWidth>

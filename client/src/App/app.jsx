@@ -19,36 +19,27 @@ const theme = createMuiTheme();
 
 // creat main app componet to be used with react
 function App(props){
-    const [position, error] = useCurrentPosition();
-  
-    if (!position && !error) {
-      return <p>Waiting...</p>;
-    }
-  
-    if (error) {
-      return <p>{error.message}</p>;
-    }
-    return true ?(
+   return (
     // use multi theme component to apply generated theme througout our app
-    <MuiThemeProvider theme={theme}>
+   <MuiThemeProvider theme={theme}>
           {/* use baseline component to give css functionality to individual components/pages in the app */}
-        <CssBaseline/>
+      <CssBaseline/>
            {/* use main router component first to use subsequent functions */}
-        <Router>
+      <Router>
                {/* use switch function to handle different routing paths */}
             <Switch>
                    {/* define paths, adn where to route those paths when entered */}
-                <Route exact path='/' component={Home} />
-                <Route exact path='/signup' component={SignUp} />
+               <Route exact path='/' component={Home} />
+               <Route exact path='/signup' component={SignUp} />
                    {/* may change the login to / root so it default */}
-                <Route exact path='/signin' component={SignIn} />
-                <Route exact path='/dash' component={Dash} />
+               <Route exact path='/signin' component={SignIn} />
+               <Route exact path='/dash' component={Dash} />
                    {/* add route for new map page */}
-                <Route exact path='/lostpets' component={LostPets} />
+               <Route exact path='/lostpets' component={LostPets} />
             </Switch>
-        </Router>
-    </MuiThemeProvider>
-    ):<div id="loader"><CircularProgress/></div>
+      </Router>
+   </MuiThemeProvider>
+   )
 }
 
 // export to be used and compiled from main index

@@ -1,13 +1,46 @@
 import React from 'react';
 import Axios from 'axios';
+import { Button, FormControl, Input, InputLabel } from '@material-ui/core'
+import withStyles from "@material-ui/core/styles/withStyles";
 // require('dotenv').config;
 // import cloudinary from 'cloudinary';
 import PetsList from './PetsList.jsx';
 import Comments from './Comments.jsx';
 
+const styles = theme => ({
+  main: {
+    width: "auto",
+    marginLeft: theme.spacing(3),
+    marginRight: theme.spacing(3),
+    [theme.breakpoints.up(400 + theme.spacing(3) * 2)]: {
+      width: 400,
+      marginLeft: "auto",
+      marginRight: "auto"
+    }
+  },
+  paper: {
+    marginTop: theme.spacing(8),
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    padding: `${theme.spacing(2)}px ${theme.spacing(3)}px ${theme.spacing(3)}px`
+  },
+  avatar: {
+    margin: theme.spacing(),
+    backgroundColor: theme.palette.secondary.main
+  },
+  form: {
+    marginTop: theme.spacing()
+  },
+  submit: {
+    marginTop: theme.spacing(3)
+  }
+});
+
 class Pets extends React.Component {
     constructor(props) {
         super(props)
+
         this.state = {
             name: '',
             type: '',
@@ -76,39 +109,91 @@ class Pets extends React.Component {
         .catch(err => console.error(err));
     }
 
-       
-
     render() {
+      const { classes } = this.props;
+
       const { pets } = this.state;
         return (
-            <div>
-              <button onClick={this.showWidget}>Upload Pet</button>
-                <br />
-                <label>Pet Name:
-                    <input type="text" name="name" onChange={this.handleChange} />
-                </label>
-                <br/>
-                <label>Type:
-                    <input type="text" name="type" onChange={this.handleChange} />
-                </label>
-                <br/>
-                <label>Message:
-                    <input type="text" name="message" onChange={this.handleChange} />
-                </label>
-                <br/>
-                <label>Contact Info:
-                    <input type="text" name="contact" onChange={this.handleChange} />
-                </label>
-                <br/>
-                {/* button for cloudinary for image of pet */}
-                <button onClick={this.handleSubmit} >Submit</button>
-                <br/>
-                <button onClick={this.getPets} >Click for Lost Pets</button>
-                <PetsList pets={pets} />
-                {/* <Comments /> */}
-            </div>
-        )
+          <div>
+            <Button
+              type="submit"
+              fullWidth
+              variant="text"
+              color="primary"
+              onClick={this.showWidget}
+              className={classes.submit}
+            >
+              Upload Pet Pic
+            </Button>
+            <form className={classes.form}>
+              <FormControl margin="normal" required fullWidth>
+                <InputLabel htmlFor="name">Pet Name</InputLabel>
+                <Input
+                  id="name"
+                  type="text"
+                  name="name"
+                  autoComplete="off"
+                  autoFocus
+                  onChange={this.handleChange}
+                />
+              </FormControl>
+              <FormControl margin="normal" required fullWidth>
+                <InputLabel htmlFor="type">Type</InputLabel>
+                <Input
+                  id="email"
+                  type="text"
+                  name="type"
+                  autoComplete="off"
+                  onChange={this.handleChange}
+                />
+              </FormControl>
+              <FormControl margin="normal" required fullWidth>
+                <InputLabel htmlFor="message">Message</InputLabel>
+                <Input
+                  name="message"
+                  type="text"
+                  id="password"
+                  autoComplete="off"
+                  onChange={this.handleChange}
+                />
+              </FormControl>
+              <FormControl margin="normal" required fullWidth>
+                <InputLabel htmlFor="contact">Contact Info</InputLabel>
+                <Input
+                  name="contact"
+                  type="text"
+                  id="contact"
+                  autoComplete="off"
+                  onChange={this.handleChange}
+                />
+              </FormControl>
+
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                color="primary"
+                onClick={this.handleSubmit}
+                className={classes.submit}
+              >
+                Submit Pet!
+              </Button>
+              <PetsList pets={pets} />
+              {/* <Comments /> */}
+            </form>
+            <Button
+              type="submit"
+              fullWidth
+              variant="outlined"
+              color="secondary"
+              onClick={this.getPets}
+              className={classes.submit}
+            >
+              Lost List
+            </Button>
+          </div>
+        );
     }
 }
 
-export default Pets;
+export default withStyles(styles)(Pets);

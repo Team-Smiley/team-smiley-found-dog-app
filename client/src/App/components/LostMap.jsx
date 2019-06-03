@@ -79,9 +79,9 @@ class LostMap extends React.Component {
         {/* 2nd marker  */}
         <Marker
           onClick={this.onMarkerClick}
-          title={'SamBitchHouse'}
+          title={'Sam'}
           position={{ lat: 29.923932, lng: -90.1258465 }}
-          name={'SamBitchHouse'}
+          name={'Sam'}
         />
         <InfoWindow
           marker={this.state.activeMarker}
@@ -92,7 +92,7 @@ class LostMap extends React.Component {
               variant='h6'
               component='h4'
             >
-              Sam's Bitch Ass 
+              Sam's
             </Typography>
             <Typography
               component='p'

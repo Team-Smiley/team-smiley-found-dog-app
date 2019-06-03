@@ -74,12 +74,11 @@ function Dash(props) {
                 </Button>
                 <Typography component="h1" variant="h5">
                     {/* Hello {firebase.getCurrentUsername()} */}
-                    Hello User!
+                    Welcome Back!
                 </Typography>
                 <Typography component="h1" variant="h5">
                     {/* Your Dog {fruit ? `"${fruit}"` : <CircularProgress size={20} />} */}
-                    Your Pet: Pic <br />
-                    Sited: 20
+                    Lost Pet? 
                 </Typography>
                 <Pets />
                 {/* <Button type="submit" fullWidth variant="contained" color="secondary" onClick={logout} className={classes.submit}>
