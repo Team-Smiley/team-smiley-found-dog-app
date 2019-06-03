@@ -1,7 +1,30 @@
 import React from 'react';
 import { GoogleApiWrapper, InfoWindow, Map, Marker } from 'google-maps-react'
 import { Typography, Paper } from '@material-ui/core'
-const GOOGLE_API = 'AIzaSyAcOJfs0mi93Vl87I0pL-CLhATVhQ8O9ek'
+// const GOOGLE_API = 
+
+
+const MarkersList = props => {
+  const { locations, markerProps } = props;
+  return (
+    <span>
+      {locations.map((location, i) => {
+        return (
+          <Marker
+            key={i}
+            {...markerProps}
+            position={{ lat: location.lat(), lng: location.lng() }}
+            onClick={props.clickFunction}
+            title={'TylerHouse'}
+            position={{ lat: 29.933092, lng: -90.1325993 }}
+            name={'TylerHouse'}
+          />
+        );
+      })}
+    </span>
+  );
+};
+
 
 
 class LostMap extends React.Component {
@@ -11,13 +34,20 @@ class LostMap extends React.Component {
     this.state = {
       showingInfoWindow: false,
       activeMarker: {},
-      selectedPlace: {}
+      selectedPlace: {},
+      locations: [],
     }
     // binding this to event-handler functions
     this.onMarkerClick = this.onMarkerClick.bind(this);
-    this.onMapClick = this.onMapClick.bind(this);
+    // this.onMapClick = this.onMapClick.bind(this);
+    // this.generateMarker = this.generateMarker.bind(this);
+    this.handleMapClick = this.handleMapClick.bind(this);
+
   }
 
+  // generateMarker(
+
+  // )
   onMarkerClick(props, marker, e) {
     this.setState({
       selectedPlace: props,
@@ -26,13 +56,33 @@ class LostMap extends React.Component {
     });
   }
 
-  onMapClick(props) {
-    if (this.state.showingInfoWindow) {
-      this.setState({
-        showingInfoWindow: false,
-        activeMarker: null
-      });
-    }
+
+  // onMapClick(google) {
+  //   console.log(google.map, 'google');
+  //   if (this.state.showingInfoWindow) {
+  //     this.setState({
+  //       showingInfoWindow: false,
+  //       activeMarker: null
+  //     });
+  //   }
+  //   console.log(this.generateMarker);
+  // }
+  handleMapClick(ref, map, ev) {
+    const location = ev.latLng;
+    this.setState(prevState => ({
+      locations: [...prevState.locations, location]
+    }));
+    map.panTo(location);
+  };
+  generateMarker(){
+    return (
+    <Marker
+        onClick={this.onMarkerClick}
+        title={'TylerHouse'}
+        position={{ lat: 29.933092, lng: -90.1325993 }}
+        name={'TylerHouse'}
+      />
+    )
   }
 
   render() {
@@ -46,15 +96,13 @@ class LostMap extends React.Component {
         xs={15}
         style={style}
         google={this.props.google}
-        onClick={this.onMapClick}
+        onClick={this.handleMapClick}
         zoom={14}
         initialCenter={{ lat: 29.951065, lng: -90.071533 }}
       >
-        <Marker
-          onClick={this.onMarkerClick}
-          title={'TylerHouse'}
-          position={{ lat: 29.933092, lng: -90.1325993 }}
-          name={'TylerHouse'}
+        <MarkersList
+          locations={this.state.locations}
+          clickFunction={this.onMarkerClick}
         />
         <InfoWindow
           marker={this.state.activeMarker}

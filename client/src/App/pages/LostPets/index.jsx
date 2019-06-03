@@ -45,7 +45,7 @@ function LostPets(props) {
             MAPPY
           </Typography>
         </Paper>
-        <div><LostMap /></div>
+        <div><LostMap center={{ lat: 32.7, lng: -117.1 }} zoom={4}/></div>
       </main>
       <div>
           <Comments></Comments>
