@@ -5,6 +5,7 @@ import Axios from 'axios';
 import PetsList from './PetsList.jsx';
 import Comments from './Comments.jsx';
 
+// widget is stored in state, clicking button will call function to display widget
 class Pets extends React.Component {
     constructor(props) {
         super(props)
