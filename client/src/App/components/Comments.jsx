@@ -41,7 +41,7 @@ function Comments(props) {
     console.log(comments, 'comments');
     return (
         <div>
-            <div>
+            <div> <h1>Let us know if you have seen some animals</h1>
                 {comments ? comments.map(comment => <Comment comment={comment}></Comment>) : 'no comments yet'}
             </div>
             <label>Comment:
