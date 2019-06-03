@@ -5,6 +5,7 @@ import Axios from 'axios';
 import PetsList from './PetsList.jsx';
 import Comments from './Comments.jsx';
 
+// widget is stored in state, clicking button will call function to display widget
 class Pets extends React.Component {
     constructor(props) {
         super(props)
@@ -22,6 +23,7 @@ class Pets extends React.Component {
         (err, result) => {this.checkUploadResult(result)}
       )
         }
+        // binding of all the functions
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.showWidget = this.showWidget.bind(this);
@@ -29,6 +31,7 @@ class Pets extends React.Component {
         this.getPets = this.getPets.bind(this);
     }
 
+    // grabs information from forms by name and value entered, sets state
     handleChange() {
         const { name, value } = event.target;
         const state = {};
@@ -36,6 +39,7 @@ class Pets extends React.Component {
         this.setState(state);
     }
 
+    // Submits information in forms and picture to database
     handleSubmit(event) {
       const { name, type, message, image, contact } = this.state;
       event.preventDefault();
@@ -50,10 +54,12 @@ class Pets extends React.Component {
         .catch(err => console.error(err));
       }
     
+      // allows widget to be displayed
     showWidget(e) {
       this.state.widget.open()
     }
 
+    // when image is loaded to cloudinary, grab url to save into database
     checkUploadResult(resultEvent) {
       if (resultEvent.event === 'success') {
         console.log(resultEvent);
@@ -63,6 +69,7 @@ class Pets extends React.Component {
       }
     }
 
+    // gets all pets from database to show on page
     getPets() {
       Axios.get('/user')
         .then(pets => {

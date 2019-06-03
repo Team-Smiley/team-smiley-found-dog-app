@@ -1,6 +1,7 @@
 import React from 'react';
 import Axios from 'axios';
 
+// grabs each pet from PetsList, displays name, type, message, created_at, contact info, and image
 const PetsFeed = ({ pet }) => (
  <div>
    <h1>{ pet.name }</h1>

@@ -45,20 +45,14 @@ router.route('/signup')
 
 router.route('/user')
     .get((req, res, next) => {
-        //use sequelize query on user model to check if user exists in database
-            //handle errors in sequelize query
-            //if user exists
-                //grab session
-                //send user already exists response
-            //else
-        //redirect to login
+        // Grabs all pets from database
         Pets.findAll()
             .then(pets => res.send(pets))
             .catch(err => console.error(err))
         
         // res.send('heres the pets')
     }).post((req, res, next) => {
-        //add user comments to database
+        // adds pet information from forms, and image to database
         console.log(req.body);
         const { name, type, message, image, contact } = req.body;
         Pets.findOrCreate({where: {
@@ -73,11 +67,13 @@ router.route('/user')
     })
 
 router.route('/comments')
+    // gets all comments from database
     .get((req, res, next) => {
         Comments.findAll().then((messages) => {
             res.send(messages);
         })
     })
+    // adds comments to the database
     .post((req, res, next) => {
         const {message} = req.body;
         Comments.findOrCreate({where: {
