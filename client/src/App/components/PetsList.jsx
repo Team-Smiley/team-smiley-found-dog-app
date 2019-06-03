@@ -28,7 +28,7 @@ constructor({ pets }) {
 
 
 render() {
-    const { pets } = this.props;
+  const { pets } = this.props;
   return (
     <div>
       {pets.map(pet => <PetsFeed pet={pet} key={pet.id} />)}
