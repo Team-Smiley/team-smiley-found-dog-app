@@ -36,7 +36,7 @@ const styles = theme => ({
   }
 });
 
-
+// grabs each pet from PetsList, displays name, type, message, created_at, contact info, and image
 const PetsFeed = ({ pet, classes }) => (
   
   <div>
