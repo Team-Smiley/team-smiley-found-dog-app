@@ -3,6 +3,7 @@ import Axios from 'axios';
 // require('dotenv').config;
 // import cloudinary from 'cloudinary';
 import PetsList from './PetsList.jsx';
+import Comments from './Comments.jsx';
 
 class Pets extends React.Component {
     constructor(props) {
@@ -104,7 +105,7 @@ class Pets extends React.Component {
                 <br/>
                 <button onClick={this.getPets} >Click for Lost Pets</button>
                 <PetsList pets={pets} />
-                {/* <Comment /> */}
+                <Comments />
             </div>
         )
     }

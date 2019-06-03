@@ -1,11 +1,11 @@
 import React from 'react';
 import { GoogleApiWrapper, InfoWindow, Map, Marker } from 'google-maps-react'
 import { Typography, Paper } from '@material-ui/core'
-// const GOOGLE_API = 
+const GOOGLE_API = 'AIzaSyAcOJfs0mi93Vl87I0pL-CLhATVhQ8O9ek'
 
 
 const MarkersList = props => {
-  const { locations, markerProps } = props;
+     const { locations, markerProps } = props;
   return (
     <span>
       {locations.map((location, i) => {
@@ -45,9 +45,9 @@ class LostMap extends React.Component {
 
   }
 
-  // generateMarker(
+//   // generateMarker(
 
-  // )
+//   // )
   onMarkerClick(props, marker, e) {
     this.setState({
       selectedPlace: props,
@@ -57,16 +57,16 @@ class LostMap extends React.Component {
   }
 
 
-  // onMapClick(google) {
-  //   console.log(google.map, 'google');
-  //   if (this.state.showingInfoWindow) {
-  //     this.setState({
-  //       showingInfoWindow: false,
-  //       activeMarker: null
-  //     });
-  //   }
-  //   console.log(this.generateMarker);
-  // }
+  onMapClick(google) {
+    console.log(google.map, 'google');
+    if (this.state.showingInfoWindow) {
+      this.setState({
+        showingInfoWindow: false,
+        activeMarker: null
+      });
+    }
+    console.log(this.generateMarker);
+  }
   handleMapClick(ref, map, ev) {
     const location = ev.latLng;
     this.setState(prevState => ({
@@ -91,67 +91,26 @@ class LostMap extends React.Component {
       height: '500px',
     }
     return (
-      <Map
-        item
-        xs={15}
-        style={style}
-        google={this.props.google}
-        onClick={this.handleMapClick}
-        zoom={14}
-        initialCenter={{ lat: 29.951065, lng: -90.071533 }}
-      >
-        <MarkersList
-          locations={this.state.locations}
-          clickFunction={this.onMarkerClick}
+      <div>
+        <Map
+          item
+          xs={15}
+          style={style}
+          google={this.props.google}
+          onClick={this.handleMapClick}
+          zoom={14}
+          initialCenter={{ lat: 29.951065, lng: -90.071533 }}
         />
-        <InfoWindow
-          marker={this.state.activeMarker}
-          visible={this.state.showingInfoWindow}
-        >
-          <Paper>
-            <Typography
-              variant='h6'
-              component='h4'
-            >
-              Tyler's House
-            </Typography>
-            <Typography
-              component='p'
-            >
-              7403 Prytania St, New Orleans, LA 70118 <br />
-              225-245
-            </Typography>
-          </Paper>
-        </InfoWindow>
-        
-        {/* 2nd marker  */}
-        <Marker
-          onClick={this.onMarkerClick}
-          title={'SamBitchHouse'}
-          position={{ lat: 29.923932, lng: -90.1258465 }}
-          name={'SamBitchHouse'}
-        />
-        <InfoWindow
-          marker={this.state.activeMarker}
-          visible={this.state.showingInfoWindow}
-        >
-          <Paper>
-            <Typography
-              variant='h6'
-              component='h4'
-            >
-              Sam's Bitch Ass 
-            </Typography>
-            <Typography
-              component='p'
-            >
-              6317 Magazine St, New Orleans, lA 70118 <br />
-              302-293-8627
-            </Typography>
-          </Paper>
-        </InfoWindow>
+          <MarkersList
+            locations={this.state.locations}
+            clickFunction={this.onMarkerClick}
+          />
+          <InfoWindow
+            marker={this.state.activeMarker}
+            visible={this.state.showingInfoWindow}
+          ></InfoWindow>
+      </div>
 
-      </Map>
     );
   }
 }
