@@ -43,7 +43,7 @@
     "react-router-dom": "^5.0.0",
     "react-use-geolocation": "0.0.0-alpha.1",
     "react-with-firebase-auth": "^1.0.3",
-    "sequelize": "^5.8.7",
+    "sequelize": "^5.15.1",
     "typeface-roboto": "0.0.54"
   },
   "devDependencies": {
